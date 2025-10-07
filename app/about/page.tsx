@@ -191,11 +191,11 @@ export default function AboutPage() {
                   className="mb-6"
                 >
                   <Image
-                    src="/Hall Wilson.jpg"
+                    src="/WilsonHall-20250925-043-neutral2.jpg"
                     alt="Wilson Hall, Founder of Momentum Legal"
-                    width={280}
-                    height={280}
-                    className="w-64 h-64 object-cover rounded-full mx-auto border-4 border-gray-100"
+                    width={350}
+                    height={450}
+                    className="w-96 h-[28rem] object-contain rounded-2xl mx-auto"
                     priority
                   />
                 </motion.div>
