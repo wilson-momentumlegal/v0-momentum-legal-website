@@ -34,6 +34,13 @@ ${message || 'No message provided'}
 This email was sent from the Momentum Legal website contact form.
     `.trim()
 
+    // Check environment variables
+    console.log('Environment variables:', {
+      service_id: process.env.EMAILJS_SERVICE_ID,
+      template_id: process.env.EMAILJS_TEMPLATE_ID,
+      user_id: process.env.EMAILJS_USER_ID
+    })
+
     // For now, we'll use a simple approach with fetch to send via EmailJS
     // You can replace this with your preferred email service
     const emailData = {
@@ -52,6 +59,8 @@ This email was sent from the Momentum Legal website contact form.
     }
 
     // Send email via EmailJS
+    console.log('Sending email with data:', emailData)
+    
     const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -60,13 +69,19 @@ This email was sent from the Momentum Legal website contact form.
       body: JSON.stringify(emailData)
     })
 
+    console.log('EmailJS response status:', emailResponse.status)
+    
     if (!emailResponse.ok) {
-      console.error('EmailJS error:', await emailResponse.text())
+      const errorText = await emailResponse.text()
+      console.error('EmailJS error:', errorText)
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: `Failed to send email: ${errorText}` },
         { status: 500 }
       )
     }
+    
+    const responseData = await emailResponse.text()
+    console.log('EmailJS success response:', responseData)
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
