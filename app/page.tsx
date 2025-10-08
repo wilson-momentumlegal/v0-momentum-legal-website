@@ -22,6 +22,8 @@ export default function MomentumLegalV2() {
 
   useEffect(() => {
     setIsLoaded(true)
+    // Initialize EmailJS once when component mounts
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'lY4OXrWJ8jAMPSy5s')
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -44,12 +46,9 @@ export default function MomentumLegalV2() {
     setIsSubmitting(true)
     
     try {
-      // Initialize EmailJS with your public key
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'lY4OXrWJ8jAMPSy5s')
-      
       // Send email using EmailJS
       const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_jkmx93i',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_ytxspqd',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_8uswdqp',
         {
           from_name: `${contactForm.firstName} ${contactForm.lastName}`,
