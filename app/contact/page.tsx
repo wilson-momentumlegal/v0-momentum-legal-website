@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, Mail, Linkedin, MapPin, Clock, CheckCircle, Check, Send, Instagram } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 import { fadeUp, stagger } from "@/lib/motion"
+import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -57,21 +58,35 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
+      // Initialize EmailJS with your public key
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'lY4OXrWJ8jAMPSy5s')
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_jkmx93i',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_8uswdqp',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || 'Not provided',
+          timeline: formData.timeline || 'Not specified',
+          services: formData.services || 'Not specified',
+          message: formData.message || 'No message provided',
+          to_email: 'info@momentumlegalpc.com'
+        }
+      )
 
-      if (response.ok) {
-        setIsSubmitted(true)
-      } else {
-        const errorData = await response.json()
-        console.error('Form submission error:', errorData.error)
-        alert('There was an error sending your message. Please try again or contact us directly.')
-      }
+      console.log('Email sent successfully:', result)
+      setIsSubmitted(true)
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        budget: '',
+        timeline: '',
+        services: '',
+        message: ''
+      })
     } catch (error) {
       console.error('Form submission error:', error)
       alert('There was an error sending your message. Please try again or contact us directly.')
