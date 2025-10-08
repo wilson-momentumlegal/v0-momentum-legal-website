@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { ArrowRight, Phone, Mail, Linkedin, Scale, Building, Users, Trophy, Briefcase, GraduationCap } from "lucide-react"
+import { ArrowRight, Phone, Mail, Linkedin, Scale, Building, Users, Trophy, Briefcase, GraduationCap, Instagram } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 import { fadeUp, stagger } from "@/lib/motion"
 
@@ -356,10 +356,8 @@ export default function ServicesPage() {
                 <a href="https://www.linkedin.com/company/momentum-legal" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border flex items-center justify-center hover:border-gray-500 transition-colors cursor-pointer border-gray-700" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="https://twitter.com/momentumlegal" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border flex items-center justify-center hover:border-gray-500 transition-colors cursor-pointer border-gray-700" aria-label="X">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
+                <a href="https://www.instagram.com/momentumlegalpc?igsh=NTdhMGdlemoydW5v&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border flex items-center justify-center hover:border-gray-500 transition-colors cursor-pointer border-gray-700" aria-label="Instagram">
+                  <Instagram className="w-4 h-4" />
                 </a>
                 <a href="mailto:info@momentumlegalpc.com" className="w-8 h-8 border flex items-center justify-center hover:border-gray-500 transition-colors cursor-pointer border-gray-700" aria-label="Email">
                   <Mail className="w-4 h-4" />
