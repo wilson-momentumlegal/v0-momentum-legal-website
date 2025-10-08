@@ -41,12 +41,20 @@ This email was sent from the Momentum Legal website contact form.
       user_id: process.env.EMAILJS_USER_ID
     })
 
-    // For now, we'll use a simple approach with fetch to send via EmailJS
-    // You can replace this with your preferred email service
+    // Validate required environment variables
+    if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID || !process.env.EMAILJS_USER_ID) {
+      console.error('Missing EmailJS environment variables')
+      return NextResponse.json(
+        { error: 'Email service configuration error' },
+        { status: 500 }
+      )
+    }
+
+    // EmailJS API call with correct format
     const emailData = {
-      service_id: process.env.EMAILJS_SERVICE_ID || 'your_service_id',
-      template_id: process.env.EMAILJS_TEMPLATE_ID || 'your_template_id',
-      user_id: process.env.EMAILJS_USER_ID || 'your_user_id',
+      service_id: process.env.EMAILJS_SERVICE_ID,
+      template_id: process.env.EMAILJS_TEMPLATE_ID,
+      user_id: process.env.EMAILJS_USER_ID,
       template_params: {
         from_name: fullName,
         from_email: email,
@@ -58,7 +66,6 @@ This email was sent from the Momentum Legal website contact form.
       }
     }
 
-    // Send email via EmailJS
     console.log('Sending email with data:', emailData)
     
     const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
