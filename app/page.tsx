@@ -62,7 +62,7 @@ export default function MomentumLegalV2() {
                   >
                     Momentum<br />
                     <span className="font-medium">Legal</span><br />
-                    <span className="text-gray-200">the Power Behind Your Next Deal</span>
+                    <span className="text-gray-200">The Power Behind Your Next Deal</span>
                   </motion.h1>
 
                   <motion.p 
@@ -304,8 +304,8 @@ export default function MomentumLegalV2() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-24 bg-white">
+      {/* Statistics Section - Hidden until accurate stats are available */}
+      {/* <section className="py-24 bg-white">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
           <motion.div 
             className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
@@ -334,7 +334,7 @@ export default function MomentumLegalV2() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-gray-900 text-white">
