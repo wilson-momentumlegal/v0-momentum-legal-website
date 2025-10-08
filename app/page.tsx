@@ -9,6 +9,15 @@ import { fadeUp, stagger } from "@/lib/motion"
 
 export default function MomentumLegalV2() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [contactForm, setContactForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
@@ -18,6 +27,49 @@ export default function MomentumLegalV2() {
     const section = document.getElementById(sectionId)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleContactInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setContactForm(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactForm)
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setContactForm({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          message: ''
+        })
+      } else {
+        const errorData = await response.json()
+        console.error('Form submission error:', errorData.error)
+        alert('There was an error sending your message. Please try again or contact us directly.')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert('There was an error sending your message. Please try again or contact us directly.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -378,40 +430,90 @@ export default function MomentumLegalV2() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input 
-                  type="text" 
-                  placeholder="First Name" 
-                  className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
-                />
-                <input 
-                  type="text" 
-                  placeholder="Last Name" 
-                  className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
-                />
-              </div>
-              <input 
-                type="email" 
-                placeholder="Work Email" 
-                className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
-              />
-              <input 
-                type="text" 
-                placeholder="Company / Organization (optional)" 
-                className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
-              />
-              <textarea 
-                placeholder="Briefly describe your matter (corporate, NIL, institution)..." 
-                rows={4}
-                className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors resize-none border-gray-600"
-              ></textarea>
-              <motion.button 
-                className="w-full py-4 text-sm font-medium transition-colors bg-white text-black hover:bg-gray-100"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Submit Inquiry
-              </motion.button>
+              {!isSubmitted ? (
+                <form onSubmit={handleContactSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input 
+                      type="text" 
+                      name="firstName"
+                      value={contactForm.firstName}
+                      onChange={handleContactInputChange}
+                      placeholder="First Name" 
+                      required
+                      className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
+                    />
+                    <input 
+                      type="text" 
+                      name="lastName"
+                      value={contactForm.lastName}
+                      onChange={handleContactInputChange}
+                      placeholder="Last Name" 
+                      required
+                      className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
+                    />
+                  </div>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={contactForm.email}
+                    onChange={handleContactInputChange}
+                    placeholder="Work Email" 
+                    required
+                    className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
+                  />
+                  <input 
+                    type="text" 
+                    name="company"
+                    value={contactForm.company}
+                    onChange={handleContactInputChange}
+                    placeholder="Company / Organization (optional)" 
+                    className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
+                  />
+                  <textarea 
+                    name="message"
+                    value={contactForm.message}
+                    onChange={handleContactInputChange}
+                    placeholder="Briefly describe your matter (corporate, NIL, institution)..." 
+                    rows={4}
+                    required
+                    className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors resize-none border-gray-600"
+                  />
+                  <motion.button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-4 text-sm font-medium transition-colors bg-white text-black hover:bg-gray-100 disabled:opacity-50"
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+                  </motion.button>
+                </form>
+              ) : (
+                <motion.div 
+                  className="text-center py-12"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-medium mb-2 text-white">Thank You!</h3>
+                  <p className="text-gray-300 mb-6">
+                    We've received your inquiry and will get back to you within 24 hours.
+                  </p>
+                  <motion.button
+                    onClick={() => setIsSubmitted(false)}
+                    className="px-6 py-2 text-sm font-medium text-gray-300 border border-gray-600 rounded-lg hover:bg-gray-800 transition-colors"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Send Another Message
+                  </motion.button>
+                </motion.div>
+              )}
             </motion.div>
           </motion.div>
         </div>

@@ -1,0 +1,22 @@
+NEW CONTACT FORM SUBMISSION - MOMENTUM LEGAL
+============================================
+
+CONTACT INFORMATION:
+-------------------
+Name: {{from_name}}
+Email: {{from_email}}
+Company: {{company}}
+Timeline: {{timeline}}
+Services: {{services}}
+
+MESSAGE:
+--------
+{{message}}
+
+NEXT STEPS:
+-----------
+Please respond to {{from_email}} within 24 hours to maintain our service standards.
+
+---
+This email was automatically generated from the Momentum Legal website contact form.
+Received on {{date}} at {{time}}
