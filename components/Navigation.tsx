@@ -108,7 +108,7 @@ export function Navigation({ currentPage }: NavigationProps) {
               Services
             </button>
             <div className="h-5 w-px bg-gray-600"></div>
-            <a href="https://www.linkedin.com/in/wilson-x-hall-41595bb9/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/momentum-legal-p-c/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
             <a href="https://www.instagram.com/momentumlegalpc?igsh=NTdhMGdlemoydW5v&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
