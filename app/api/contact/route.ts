@@ -41,11 +41,16 @@ This email was sent from the Momentum Legal website contact form.
       user_id: process.env.EMAILJS_USER_ID
     })
 
-    // Validate required environment variables
-    if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID || !process.env.EMAILJS_USER_ID) {
-      console.error('Missing EmailJS environment variables')
+    // Validate required environment variables with detailed error messages
+    const missingVars = []
+    if (!process.env.EMAILJS_SERVICE_ID) missingVars.push('EMAILJS_SERVICE_ID')
+    if (!process.env.EMAILJS_TEMPLATE_ID) missingVars.push('EMAILJS_TEMPLATE_ID')
+    if (!process.env.EMAILJS_USER_ID) missingVars.push('EMAILJS_USER_ID')
+    
+    if (missingVars.length > 0) {
+      console.error('Missing EmailJS environment variables:', missingVars)
       return NextResponse.json(
-        { error: 'Email service configuration error' },
+        { error: `Missing environment variables: ${missingVars.join(', ')}` },
         { status: 500 }
       )
     }
