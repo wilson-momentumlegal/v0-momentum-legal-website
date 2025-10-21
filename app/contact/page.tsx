@@ -243,6 +243,7 @@ export default function ContactPage() {
                       <option value="nil-collective">NIL Collective</option>
                       <option value="brand-sponsor">Brand & Sponsor Advisory</option>
                       <option value="university">University Counsel</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                   <div className="sm:col-span-2">

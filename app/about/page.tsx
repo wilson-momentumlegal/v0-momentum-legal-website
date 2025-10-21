@@ -200,7 +200,13 @@ export default function AboutPage() {
                   />
                 </motion.div>
                 <h3 className="text-xl font-medium mb-2 text-gray-900">Wilson Hall</h3>
-                <p className="text-sm text-gray-600">Founder & Principal Attorney</p>
+                <p className="text-sm text-gray-600 mb-2">Founder & Principal Attorney</p>
+                <a 
+                  href="mailto:wilson@momentumlegalpc.com" 
+                  className="text-sm text-emerald-600 hover:text-emerald-700 hover:underline transition-colors"
+                >
+                  wilson@momentumlegalpc.com
+                </a>
               </div>
 
               {/* Core Values */}
