@@ -62,7 +62,7 @@ export default function ContactPage() {
     try {
       // Send email using EmailJS
       const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_ytxspqd',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_o8wxp3v',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_8uswdqp',
         {
           from_name: formData.name,
