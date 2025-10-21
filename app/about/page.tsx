@@ -200,12 +200,15 @@ export default function AboutPage() {
                   />
                 </motion.div>
                 <h3 className="text-xl font-medium mb-2 text-gray-900">Wilson Hall</h3>
-                <p className="text-sm text-gray-600 mb-2">Founder & Principal Attorney</p>
+                <p className="text-sm text-gray-600 mb-4">Founder & Principal Attorney</p>
                 <a 
                   href="mailto:wilson@momentumlegalpc.com" 
-                  className="text-sm text-emerald-600 hover:text-emerald-700 hover:underline transition-colors"
+                  className="inline-flex flex-col items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors group"
                 >
-                  wilson@momentumlegalpc.com
+                  <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-emerald-50 flex items-center justify-center transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm font-medium">Email</span>
                 </a>
               </div>
 
