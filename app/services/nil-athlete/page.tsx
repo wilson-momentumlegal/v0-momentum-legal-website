@@ -166,12 +166,12 @@ export default function NILAthletePage() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20 py-4">
-              <motion.div 
+              <motion.div
                 className="flex items-center relative"
-                ref={logoMagnetic.ref}
-                style={{ 
-                  x: logoMagnetic.x, 
-                  y: logoMagnetic.y 
+                ref={logoMagnetic.ref as React.RefObject<HTMLDivElement>}
+                style={{
+                  x: logoMagnetic.x,
+                  y: logoMagnetic.y
                 }}
                 whileHover={!isMobile ? { scale: 1.05 } : undefined}
                 whileTap={isMobile ? { scale: 0.98 } : undefined}
@@ -339,12 +339,12 @@ export default function NILAthletePage() {
               initial="hidden"
               animate={isLoaded ? "show" : "hidden"}
             >
-              <motion.div 
+              <motion.div
                 variants={isMobile ? mobileRevealUp : revealUp}
-                ref={ctaMagnetic.ref}
-                style={{ 
-                  x: ctaMagnetic.x, 
-                  y: ctaMagnetic.y 
+                ref={ctaMagnetic.ref as React.RefObject<HTMLDivElement>}
+                style={{
+                  x: ctaMagnetic.x,
+                  y: ctaMagnetic.y
                 }}
                 className="relative"
               >

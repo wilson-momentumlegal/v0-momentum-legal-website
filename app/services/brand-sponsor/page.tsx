@@ -334,12 +334,12 @@ export default function BrandSponsorPage() {
               initial="hidden"
               animate={isLoaded ? "show" : "hidden"}
             >
-              <motion.div 
+              <motion.div
                 variants={isMobile ? mobileRevealUp : revealUp}
-                ref={ctaMagnetic.ref}
-                style={{ 
-                  x: ctaMagnetic.x, 
-                  y: ctaMagnetic.y 
+                ref={ctaMagnetic.ref as React.RefObject<HTMLDivElement>}
+                style={{
+                  x: ctaMagnetic.x,
+                  y: ctaMagnetic.y
                 }}
                 className="relative"
               >
