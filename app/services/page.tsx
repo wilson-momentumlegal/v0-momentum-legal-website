@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { ArrowRight, Phone, Mail, Linkedin, Scale, Building, Users, Trophy, Briefcase, GraduationCap, Instagram } from "lucide-react"
+import { ArrowRight, Phone, Mail, Linkedin, Scale, Building, Users, Trophy, Briefcase, GraduationCap, Instagram, Code } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 import { fadeUp, stagger } from "@/lib/motion"
 
@@ -61,11 +61,28 @@ export default function ServicesPage() {
       id: "corporate-venture",
       services: [
         "Entity Formation and Structuring: LLCs, C‑Corps, partnerships, governance documents.",
-        "Venture Financings: Represent VC funds and startups in debt and equity financings.",
+        "Venture Financings & Investor Transactions: Represent VC funds, startups, and investors in debt and equity financings.",
         "Mergers & Acquisitions: Buy‑side and sell‑side legal counsel for acquisitions, joint ventures, asset sales.",
-        "Commercial Contracts: Licensing agreements, enterprise customer agreements, service agreements.",
-        "Employment & Equity Matters: Executive contracts, stock options, ESOP plans.",
-        "Compliance & Risk Advisory: Regulatory strategy, securities compliance, risk mitigation."
+        "Equity Matters: Founder Equity Structuring & Initial Issuances, Stock Option Grants, ESOP Creation and Resizing, Secondary Transactions & Equity Transfers.",
+        "Fractional General Counsel: Day-to-day legal advisory for founders and executive teams • Corporate governance, board support, and compliance oversight • Strategic legal guidance on growth, risk, and operations"
+      ]
+    },
+    {
+      title: "Commercial & Technology Transactions",
+      description: "Modern businesses are powered by technology, data, and scalable commercial relationships. Momentum Legal counsels companies on the structuring, negotiation, and execution of technology-driven and commercial transactions that support scale, protect intellectual property, and align legal risk with business objectives. From software and licensing deals to strategic partnerships and complex commercial arrangements, we deliver practical, deal-ready solutions for fast-moving businesses.",
+      image: "/Commercial & Technology Transactions Image.png",
+      alt: "Technology and commercial transactions",
+      icon: <Code className="h-8 w-8" />,
+      id: "commercial-technology",
+      services: [
+        "Technology licensing & SaaS agreements",
+        "Software development & integration agreements",
+        "Data, API, and platform agreements",
+        "Commercial vendor, supplier, and customer contracts",
+        "Sponsorship, brand, and endorsement agreements",
+        "Strategic partnerships & joint ventures",
+        "IP-driven revenue, referral, and commercialization arrangements",
+        "Sports-tech and NIL-related commercial deals"
       ]
     },
     {
@@ -251,20 +268,50 @@ export default function ServicesPage() {
                       <h3 className="text-base font-medium text-gray-900 mb-4">Key Services:</h3>
                       <ul className="space-y-3">
                         {service.services.map((item, i) => {
-                          const [label, description] = item.split(': ')
-                          return (
-                            <motion.li 
-                              key={i}
-                              className="flex items-start gap-3"
-                              whileHover={{ x: 4 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
-                              <div className="text-sm font-light leading-relaxed text-gray-600">
-                                <span className="font-normal text-gray-800">{label}:</span> {description}
-                              </div>
-                            </motion.li>
-                          )
+                          // Check if item has a label (contains ': ')
+                          if (item.includes(': ')) {
+                            const [label, description] = item.split(': ')
+                            const subItems = description?.includes(' • ') ? description.split(' • ') : null
+                            return (
+                              <motion.li 
+                                key={i}
+                                className="flex items-start gap-3"
+                                whileHover={{ x: 4 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
+                                <div className="text-sm font-light leading-relaxed text-gray-600">
+                                  <span className="font-normal text-gray-800">{label}:</span> {subItems ? (
+                                    <ul className="mt-2 space-y-1 ml-4">
+                                      {subItems.map((subItem, j) => (
+                                        <li key={j} className="flex items-start gap-2">
+                                          <span className="text-gray-400">•</span>
+                                          <span>{subItem}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : (
+                                    <span> {description}</span>
+                                  )}
+                                </div>
+                              </motion.li>
+                            )
+                          } else {
+                            // Plain bullet point without label
+                            return (
+                              <motion.li 
+                                key={i}
+                                className="flex items-start gap-3"
+                                whileHover={{ x: 4 }}
+                                transition={{ duration: 0.2 }}
+                              >
+                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
+                                <div className="text-sm font-light leading-relaxed text-gray-600">
+                                  <span className="font-normal text-gray-800">{item}</span>
+                                </div>
+                              </motion.li>
+                            )
+                          }
                         })}
                       </ul>
                     </div>
@@ -379,6 +426,7 @@ export default function ServicesPage() {
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
                 <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
                 <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
                 <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>

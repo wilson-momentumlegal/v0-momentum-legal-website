@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, Mail, Linkedin, MapPin, Instagram } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 import { fadeUp, stagger } from "@/lib/motion"
-import emailjs from '@emailjs/browser'
 
 export default function MomentumLegalV2() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -17,13 +16,13 @@ export default function MomentumLegalV2() {
     company: '',
     message: ''
   })
+  const [honeypot, setHoneypot] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   useEffect(() => {
     setIsLoaded(true)
-    // Initialize EmailJS once when component mounts
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'lY4OXrWJ8jAMPSy5s')
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -44,22 +43,34 @@ export default function MomentumLegalV2() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setErrorMessage(null)
+
+    if (honeypot) {
+      setIsSubmitting(false)
+      return
+    }
     
     try {
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_o8wxp3v',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_8uswdqp',
-        {
-          from_name: `${contactForm.firstName} ${contactForm.lastName}`,
-          from_email: contactForm.email,
-          company: contactForm.company || 'Not provided',
-          message: contactForm.message || 'No message provided',
-          to_email: 'info@momentumlegalpc.com'
-        }
-      )
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: contactForm.firstName,
+          lastName: contactForm.lastName,
+          email: contactForm.email,
+          company: contactForm.company,
+          message: contactForm.message,
+          honeypotField: honeypot,
+        }),
+      })
 
-      console.log('Email sent successfully:', result)
+      if (!response.ok) {
+        const error = await response.json().catch(() => ({ error: 'Unexpected error occurred' }))
+        throw new Error(error?.error ?? 'Unable to send your message right now.')
+      }
+
       setIsSubmitted(true)
       setContactForm({
         firstName: '',
@@ -68,9 +79,9 @@ export default function MomentumLegalV2() {
         company: '',
         message: ''
       })
+      setHoneypot('')
     } catch (error) {
-      console.error('Form submission error:', error)
-      alert('There was an error sending your message. Please try again or contact us directly.')
+      setErrorMessage(error instanceof Error ? error.message : 'There was an error sending your message. Please try again or contact us directly.')
     } finally {
       setIsSubmitting(false)
     }
@@ -124,14 +135,14 @@ export default function MomentumLegalV2() {
                     className="text-lg lg:text-xl font-light leading-relaxed max-w-lg text-gray-200"
                     variants={fadeUp}
                   >
-                    Corporate, Sports, and Institutional Counsel built for innovation, ambitious clients, and dynamic markets.
+                    Corporate, Commercial, and Institutional Counsel for innovation, ambitious clients, and dynamic markets.
                   </motion.p>
 
                   <motion.p 
                     className="text-sm lg:text-base font-light leading-relaxed max-w-lg text-gray-300"
                     variants={fadeUp}
                   >
-                    We serve as trusted advisors to founders, investors, athletes, brands, collectives, and universities to structure deals, protect IP, and navigate evolving regulations with practical, outcome‑focused advice.
+                    We serve as trusted advisors to founders, companies, investors, athletes, and institutions to structure transactions, protect IP, and deliver practical, outcome-focused legal guidance.
                   </motion.p>
                 </div>
 
@@ -207,10 +218,10 @@ export default function MomentumLegalV2() {
                       anchor: "corporate-venture"
                     },
                     {
-                      title: "NIL & Athlete Representation",
+                      title: "Commercial & Technology Transactions",
                       gradient: "bg-gradient-to-tr from-slate-700 to-slate-500",
                       ring: "ring-slate-400/30",
-                      anchor: "nil-athlete"
+                      anchor: "commercial-technology"
                     }
                   ].map((service, index) => (
                     <motion.a 
@@ -242,16 +253,16 @@ export default function MomentumLegalV2() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
                     {
-                      title: "NIL Collective Representation",
+                      title: "NIL & Athlete Representation",
                       gradient: "bg-gradient-to-tr from-gray-800 to-gray-600",
                       ring: "ring-gray-400/30",
-                      anchor: "collective"
+                      anchor: "nil-athlete"
                     },
                     {
-                      title: "Brand & Sponsor Advisory",
+                      title: "NIL Collective Representation",
                       gradient: "bg-gradient-to-tr from-zinc-800 to-zinc-600",
                       ring: "ring-zinc-400/30",
-                      anchor: "brand-sponsor"
+                      anchor: "collective"
                     }
                   ].map((service, index) => (
                     <motion.a 
@@ -279,29 +290,45 @@ export default function MomentumLegalV2() {
                   ))}
                 </div>
 
-                {/* Third Row - Centered University card */}
-                <div className="flex justify-center">
-                  <motion.a 
-                    href="/services#university-institutional"
-                    className="group relative overflow-hidden ring-1 ring-neutral-400/30 text-white bg-gradient-to-tr from-neutral-800 to-neutral-600 rounded-2xl p-5 transition-all duration-300 cursor-pointer hover:shadow-xl block w-full max-w-sm"
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div 
-                      className="absolute inset-0"
-                      style={{
-                        background: "radial-gradient(160px 160px at 30% 30%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(220px 220px at 70% 70%, rgba(0,0,0,0.25), transparent 60%)"
-                      }}
-                    />
-                    <div className="relative flex flex-col h-full justify-between">
-                      <h3 className="text-2xl font-semibold mb-6 text-white leading-tight">University & Institutional Counsel</h3>
-                      <div className="flex justify-end">
-                        <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                          <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
+                {/* Third Row - 2 cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    {
+                      title: "Brand & Sponsor Advisory",
+                      gradient: "bg-gradient-to-tr from-neutral-800 to-neutral-600",
+                      ring: "ring-neutral-400/30",
+                      anchor: "brand-sponsor"
+                    },
+                    {
+                      title: "University & Institutional Counsel",
+                      gradient: "bg-gradient-to-tr from-stone-800 to-stone-600",
+                      ring: "ring-stone-400/30",
+                      anchor: "university-institutional"
+                    }
+                  ].map((service, index) => (
+                    <motion.a 
+                      key={index}
+                      href={`/services#${service.anchor}`}
+                      className={`group relative overflow-hidden ring-1 ${service.ring} text-white ${service.gradient} rounded-2xl p-5 transition-all duration-300 cursor-pointer hover:shadow-xl block`}
+                      whileHover={{ y: -4, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div 
+                        className="absolute inset-0"
+                        style={{
+                          background: "radial-gradient(160px 160px at 30% 30%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(220px 220px at 70% 70%, rgba(0,0,0,0.25), transparent 60%)"
+                        }}
+                      />
+                      <div className="relative flex flex-col h-full justify-between">
+                        <h3 className="text-2xl font-semibold mb-6 text-white leading-tight">{service.title}</h3>
+                        <div className="flex justify-end">
+                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.a>
+                    </motion.a>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -435,6 +462,18 @@ export default function MomentumLegalV2() {
             >
               {!isSubmitted ? (
                 <form onSubmit={handleContactSubmit} className="space-y-6">
+                  <div className="hidden" aria-hidden="true">
+                    <label className="sr-only" htmlFor="home-website">Leave this field empty</label>
+                    <input
+                      id="home-website"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(event) => setHoneypot(event.target.value)}
+                    />
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input 
                       type="text" 
@@ -443,6 +482,7 @@ export default function MomentumLegalV2() {
                       onChange={handleContactInputChange}
                       placeholder="First Name" 
                       required
+                      maxLength={60}
                       className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
                     />
                     <input 
@@ -452,6 +492,7 @@ export default function MomentumLegalV2() {
                       onChange={handleContactInputChange}
                       placeholder="Last Name" 
                       required
+                      maxLength={60}
                       className="bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
                     />
                   </div>
@@ -462,6 +503,7 @@ export default function MomentumLegalV2() {
                     onChange={handleContactInputChange}
                     placeholder="Work Email" 
                     required
+                    maxLength={190}
                     className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
                   />
                   <input 
@@ -470,6 +512,7 @@ export default function MomentumLegalV2() {
                     value={contactForm.company}
                     onChange={handleContactInputChange}
                     placeholder="Company / Organization (optional)" 
+                    maxLength={160}
                     className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors border-gray-600"
                   />
                   <textarea 
@@ -479,8 +522,14 @@ export default function MomentumLegalV2() {
                     placeholder="Briefly describe your matter (corporate, NIL, institution)..." 
                     rows={4}
                     required
+                    maxLength={2000}
                     className="w-full bg-transparent border px-4 py-4 text-sm font-light focus:border-white focus:outline-none transition-colors resize-none border-gray-600"
                   />
+                  {errorMessage && (
+                    <div className="text-sm text-red-300 bg-red-900/30 border border-red-700 rounded-lg px-4 py-3">
+                      {errorMessage}
+                    </div>
+                  )}
                   <motion.button 
                     type="submit"
                     disabled={isSubmitting}
@@ -579,6 +628,7 @@ export default function MomentumLegalV2() {
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
                 <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
                 <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
                 <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>

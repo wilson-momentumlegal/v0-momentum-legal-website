@@ -126,7 +126,7 @@ export default function AboutPage() {
               <span className="font-medium">Mission</span>
             </h2>
             <p className="text-lg lg:text-xl font-light leading-relaxed text-gray-600 mb-12">
-              Our mission at Momentum Legal is to empower you to seize opportunities with clarity, confidence, and creative legal solutions. We thrive at the dynamic intersection of business, sports, and innovation, providing practical guidance for entrepreneurs, athletes, and institutions in fast-moving markets. We are dedicated to protecting your rights, minimizing risk, and fostering lasting growth for those who dare to redefine what's possible.
+              Our mission at Momentum Legal is to empower you to seize opportunities with clarity, confidence, and creative legal solutions. We thrive at the dynamic intersection of business, technology, and innovation, providing practical guidance for entrepreneurs, investors, athletes, and institutions in fast-moving markets. We are dedicated to protecting your interests, minimizing risk, and fostering lasting growth for those who dare to redefine what's possible.
             </p>
           </motion.div>
         </div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                Prior to founding Momentum Legal, Wilson was an associate at two global and AmLaw 100 law firms.
+                Prior to founding Momentum Legal, Wilson was a BigLaw associate at Goodwin Procter LLP and Davis Wright Tremaine LLP.
                 </p>
               </div>
             </motion.div>
@@ -411,6 +411,7 @@ export default function AboutPage() {
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
                 <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
                 <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
                 <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>

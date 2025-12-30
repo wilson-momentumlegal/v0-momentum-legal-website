@@ -14,7 +14,7 @@ export const fadeUp = {
     transition: { 
       duration: 0.8, 
       ease: PREMIUM_EASE,
-      type: "spring",
+      type: "spring" as const,
       bounce: 0.1
     } 
   }
