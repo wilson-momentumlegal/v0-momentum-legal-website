@@ -302,7 +302,7 @@ export default function MomentumLegalHomepage() {
               style={{ x: ctaMagnetic.x, y: ctaMagnetic.y }}
             >
               <motion.div
-                whileHover={magneticHover.hover}
+                whileHover={magneticHover.hover as any}
                 whileTap={{ scale: 0.95 }}
                 initial={magneticHover.rest}
               >
