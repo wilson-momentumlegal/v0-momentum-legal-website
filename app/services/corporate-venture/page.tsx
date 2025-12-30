@@ -355,7 +355,7 @@ export default function CorporateVenturePage() {
               >
                 <motion.div
                   whileHover={!isMobile ? (magneticHover.hover as any) : undefined}
-                  whileTap={isMobile ? mobileButtonPress : { scale: 0.95 }}
+                  whileTap={isMobile ? (mobileButtonPress as any) : { scale: 0.95 }}
                   initial={!isMobile ? magneticHover.rest : mobileButtonPress.rest}
                   ref={isMobile ? ctaRipple.ref : undefined}
                 >
