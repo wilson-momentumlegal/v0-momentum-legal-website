@@ -31,22 +31,20 @@ export const stagger = {
 
 // Enhanced hover effects
 export const magneticHover = {
-  rest: { 
+  rest: {
     scale: 1,
     rotate: 0,
     filter: "blur(0px) brightness(1)"
   },
-  hover: { 
+  hover: {
     scale: 1.05,
     rotate: -1,
     filter: "blur(0px) brightness(1.1)",
-    transition: { 
-      duration: 0.4, 
-      ease: PREMIUM_EASE,
-      type: "spring",
+    transition: {
+      type: "spring" as const,
       stiffness: 300,
       damping: 20
-    } 
+    }
   }
 }
 
@@ -149,20 +147,18 @@ export const pageWipe = {
 
 // Premium micro-interactions
 export const float = {
-  rest: { 
+  rest: {
     y: 0,
     rotate: 0
   },
-  hover: { 
+  hover: {
     y: -12,
     rotate: 1,
-    transition: { 
-      duration: 0.6, 
-      ease: BOUNCE_EASE,
-      type: "spring",
+    transition: {
+      type: "spring" as const,
       stiffness: 400,
       damping: 10
-    } 
+    }
   }
 }
 
