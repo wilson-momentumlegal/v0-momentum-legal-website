@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, Mail, Linkedin, MapPin, Clock, CheckCircle, Check, Send, Instagram } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 import { fadeUp, stagger } from "@/lib/motion"
-import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -19,13 +18,13 @@ export default function ContactPage() {
     services: '',
     message: ''
   })
+  const [honeypot, setHoneypot] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   useEffect(() => {
     setIsLoaded(true)
-    // Initialize EmailJS once when component mounts
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || 'lY4OXrWJ8jAMPSy5s')
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -58,24 +57,30 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setErrorMessage(null)
+
+    if (honeypot) {
+      setIsSubmitting(false)
+      return
+    }
     
     try {
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_o8wxp3v',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_8uswdqp',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company || 'Not provided',
-          timeline: formData.timeline || 'Not specified',
-          services: formData.services || 'Not specified',
-          message: formData.message || 'No message provided',
-          to_email: 'info@momentumlegalpc.com'
-        }
-      )
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          honeypotField: honeypot,
+        }),
+      })
 
-      console.log('Email sent successfully:', result)
+      if (!response.ok) {
+        const error = await response.json().catch(() => ({ error: 'Unexpected error occurred' }))
+        throw new Error(error?.error ?? 'Unable to send your message right now.')
+      }
+
       setIsSubmitted(true)
       setFormData({
         name: '',
@@ -86,9 +91,9 @@ export default function ContactPage() {
         services: '',
         message: ''
       })
+      setHoneypot('')
     } catch (error) {
-      console.error('Form submission error:', error)
-      alert('There was an error sending your message. Please try again or contact us directly.')
+      setErrorMessage(error instanceof Error ? error.message : 'There was an error sending your message. Please try again or contact us directly.')
     } finally {
       setIsSubmitting(false)
     }
@@ -178,6 +183,18 @@ export default function ContactPage() {
 
               {!isSubmitted ? (
                 <form className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" onSubmit={handleSubmit}>
+                  <div className="hidden" aria-hidden="true">
+                    <label className="sr-only" htmlFor="contact-website">Leave this field empty</label>
+                    <input
+                      id="contact-website"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(event) => setHoneypot(event.target.value)}
+                    />
+                  </div>
                   <div className="sm:col-span-1">
                     <label className="block text-xs font-medium text-gray-700 mb-2">Name</label>
                     <input 
@@ -187,6 +204,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required 
                       placeholder="Your name" 
+                      maxLength={120}
                       className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
@@ -199,6 +217,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required 
                       placeholder="you@company.com" 
+                      maxLength={190}
                       className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
@@ -210,6 +229,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Company name" 
+                      maxLength={160}
                       className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
@@ -253,10 +273,17 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={3} 
+                      required
+                      maxLength={2000}
                       placeholder="Describe your legal needs, goals, timeline..." 
                       className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     ></textarea>
                   </div>
+                  {errorMessage && (
+                    <div className="sm:col-span-2 text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg p-3">
+                      {errorMessage}
+                    </div>
+                  )}
                   <div className="sm:col-span-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <p className="text-xs text-gray-600">We'll get back to you within 24 hours with next steps.</p>
                     <button 
