@@ -302,8 +302,8 @@ export default function AboutPage() {
                     {section.items.map((item, i) => (
                       <div key={i}>
                         <div className="font-normal text-gray-800 text-sm">{item.label}</div>
-                        {item.detail && (
-                          <div className="text-sm text-gray-600">{item.detail}</div>
+                        {('detail' in item ? item.detail : null) && (
+                          <div className="text-sm text-gray-600">{'detail' in item ? item.detail : ''}</div>
                         )}
                       </div>
                     ))}
