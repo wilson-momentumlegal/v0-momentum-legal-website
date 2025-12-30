@@ -35,6 +35,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Disable Turbopack to avoid build crashes in Next.js 16.x
+  turbo: undefined,
+  webpack: (config) => {
+    return config
+  },
   async headers() {
     return [
       {
