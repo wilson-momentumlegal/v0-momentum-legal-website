@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Menu, X, Linkedin, Instagram } from "lucide-react"
 
 interface NavigationProps {
-  currentPage: 'home' | 'about' | 'services' | 'contact'
+  currentPage: 'home' | 'about' | 'services' | 'contact' | 'privacy' | 'terms'
 }
 
 export function Navigation({ currentPage }: NavigationProps) {
