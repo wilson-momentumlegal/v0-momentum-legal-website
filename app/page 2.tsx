@@ -128,7 +128,7 @@ export default function MomentumLegalHomepage() {
           <div className="flex justify-between items-center h-20 py-4">
             <motion.div 
               className="flex items-center"
-              ref={logoMagnetic.ref}
+              ref={logoMagnetic.ref as React.RefObject<HTMLDivElement>}
               style={{ x: logoMagnetic.x, y: logoMagnetic.y }}
               whileHover={{ scale: 1.05 }}
             >
@@ -298,7 +298,7 @@ export default function MomentumLegalHomepage() {
           >
             <motion.div 
               variants={revealUp}
-              ref={ctaMagnetic.ref}
+              ref={ctaMagnetic.ref as React.RefObject<HTMLDivElement>}
               style={{ x: ctaMagnetic.x, y: ctaMagnetic.y }}
             >
               <motion.div
