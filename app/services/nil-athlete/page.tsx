@@ -351,7 +351,7 @@ export default function NILAthletePage() {
                 <motion.div
                   whileHover={!isMobile ? (magneticHover.hover as any) : undefined}
                   whileTap={isMobile ? (mobileButtonPress as any) : { scale: 0.95 }}
-                  initial={!isMobile ? magneticHover.rest : mobileButtonPress.rest}
+                  initial={!isMobile ? (magneticHover.rest as any) : (mobileButtonPress.rest as any)}
                   ref={isMobile ? ctaRipple.ref : undefined}
                 >
                   <Button
