@@ -70,9 +70,9 @@ export function useMobileScrollVelocity() {
 // Touch ripple effect (simplified)
 export function useTouchRipple() {
   const [ripples, setRipples] = useState<Array<{id: number, x: number, y: number}>>([])
+  const ref = useRef<HTMLElement>(null)
 
-  // Return empty ripples for now to avoid ref issues
-  return { ripples: [] }
+  return { ripples: [], ref }
 }
 
 // Mobile-optimized parallax (reduced effect for performance)
