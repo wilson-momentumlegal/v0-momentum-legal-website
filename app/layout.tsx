@@ -4,6 +4,7 @@ import { Inter, Playfair_Display, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
+import { CookieBanner } from "@/components/CookieBanner"
 import "./globals.css"
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfairDisplay.variable} ${poppins.variable} font-inter antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
+        <CookieBanner />
         <Analytics />
         <SpeedInsights />
       </body>
