@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
                   <p className="text-gray-900 font-medium mb-2">Momentum Legal P.C.</p>
                   <p className="text-gray-600 mb-1">Attn: Privacy Officer</p>
                   <p className="text-gray-600 mb-1">
-                    Email: <a href="mailto:privacy@momentumlegalpc.com" className="text-gray-900 hover:text-gray-700 underline">privacy@momentumlegalpc.com</a>
+                    Email: <a href="mailto:info@momentumlegalpc.com" className="text-gray-900 hover:text-gray-700 underline">info@momentumlegalpc.com</a>
                   </p>
                   <p className="text-gray-600">
                     Address: 28 Geary St., Suite 650 #193, San Francisco, CA 94108

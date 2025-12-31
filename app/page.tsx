@@ -195,7 +195,7 @@ export default function MomentumLegalV2() {
                 <span className="font-medium">Services</span>
               </h2>
               <p className="text-lg font-light leading-relaxed text-gray-300">
-              Practical, business‑first counsel across corporate, name, image, and likeness (NIL), and institutional needs—so you can move decisively and maximize opportunities.
+              Practical, business‑first counsel across corporate, commercial, name, image, and likeness (NIL), and institutional needs—so you can move decisively and maximize opportunities.
               </p>
             </motion.div>
 
