@@ -1,10 +1,10 @@
 // lib/mobile-animations.ts - Mobile-optimized animation system
 import { Variants } from "framer-motion"
 
-// Mobile-specific easing curves
-const MOBILE_EASE = [0.25, 0.46, 0.45, 0.94] as const // Optimized for touch
-const MOBILE_BOUNCE = [0.68, -0.55, 0.265, 1.55] as const 
-const MOBILE_SMOOTH = [0.4, 0, 0.2, 1] as const
+// Mobile-specific easing curves (typed as tuples for Framer Motion compatibility)
+const MOBILE_EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94] // Optimized for touch
+const MOBILE_BOUNCE: [number, number, number, number] = [0.68, -0.55, 0.265, 1.55]
+const MOBILE_SMOOTH: [number, number, number, number] = [0.4, 0, 0.2, 1]
 
 // Mobile-optimized reveal animations (less aggressive transforms)
 export const mobileRevealUp: Variants = {
@@ -19,7 +19,7 @@ export const mobileRevealUp: Variants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: MOBILE_EASE as any
+      ease: MOBILE_EASE
     }
   }
 }
@@ -34,7 +34,7 @@ export const mobileSlideIn: Variants = {
     x: 0,
     transition: {
       duration: 0.5,
-      ease: MOBILE_SMOOTH as any
+      ease: MOBILE_SMOOTH
     }
   }
 }
@@ -76,7 +76,7 @@ export const mobileCardHover: Variants = {
     y: -2,
     transition: {
       duration: 0.2,
-      ease: MOBILE_BOUNCE as any
+      ease: MOBILE_BOUNCE
     }
   }
 }
@@ -119,7 +119,7 @@ export const mobileNavSlide: Variants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      ease: MOBILE_SMOOTH as any
+      ease: MOBILE_SMOOTH
     }
   },
   exit: {
@@ -127,7 +127,7 @@ export const mobileNavSlide: Variants = {
     opacity: 0,
     transition: {
       duration: 0.25,
-      ease: MOBILE_SMOOTH as any
+      ease: MOBILE_SMOOTH
     }
   }
 }
@@ -143,7 +143,7 @@ export const mobileTextReveal: Variants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: MOBILE_EASE as any
+      ease: MOBILE_EASE
     }
   }
 }
@@ -175,7 +175,7 @@ export const mobileFloat: Variants = {
     rotate: 1,
     transition: {
       duration: 0.3,
-      ease: MOBILE_BOUNCE as any
+      ease: MOBILE_BOUNCE
     }
   }
 }
@@ -193,7 +193,7 @@ export const mobileEntranceSlide: Variants = {
     skewX: 0,
     transition: {
       duration: 0.4,
-      ease: MOBILE_EASE as any
+      ease: MOBILE_EASE
     }
   }
 }
@@ -209,7 +209,7 @@ export const mobileIconSpin: Variants = {
     scale: 1.1,
     transition: {
       duration: 0.2,
-      ease: MOBILE_BOUNCE as any
+      ease: MOBILE_BOUNCE
     }
   }
 }
@@ -225,7 +225,7 @@ export const mobileBadgePulse: Variants = {
     opacity: 1,
     transition: {
       duration: 0.4,
-      ease: MOBILE_BOUNCE as any
+      ease: MOBILE_BOUNCE
     }
   }
 }
@@ -243,7 +243,7 @@ export const mobileSectionReveal: Variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: MOBILE_EASE as any
+      ease: MOBILE_EASE
     }
   }
 }

@@ -1,22 +1,20 @@
 // lib/motion.ts - Award-winning animation system
 
-// Premium easing curves
-const PREMIUM_EASE = [0.25, 0.1, 0.25, 1.0] as const // Custom bezier for luxury feel
-const BOUNCE_EASE = [0.68, -0.55, 0.265, 1.55] as const // Subtle bounce
-const POWER_EASE = [0.77, 0, 0.175, 1] as const // Strong acceleration
+// Premium easing curves (typed as tuples for Framer Motion compatibility)
+const PREMIUM_EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1.0] // Custom bezier for luxury feel
+const BOUNCE_EASE: [number, number, number, number] = [0.68, -0.55, 0.265, 1.55] // Subtle bounce
+const POWER_EASE: [number, number, number, number] = [0.77, 0, 0.175, 1] // Strong acceleration
 
 // Core animation variants
 export const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.8, 
-      ease: PREMIUM_EASE,
-      type: "spring" as const,
-      bounce: 0.1
-    } 
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: PREMIUM_EASE
+    }
   }
 }
 
@@ -78,9 +76,7 @@ export const revealUp = {
     scale: 1,
     transition: {
       duration: 1.2,
-      ease: PREMIUM_EASE as any,
-      type: "spring" as const,
-      bounce: 0.1
+      ease: PREMIUM_EASE
     }
   }
 }
@@ -97,7 +93,7 @@ export const slideReveal = {
     skewX: 0,
     transition: {
       duration: 1.0,
-      ease: POWER_EASE as any
+      ease: POWER_EASE
     }
   }
 }
@@ -188,7 +184,7 @@ export const textReveal = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: PREMIUM_EASE as any
+      ease: PREMIUM_EASE
     }
   }
 }
@@ -228,7 +224,7 @@ export const cardHover = {
     z: 50,
     transition: {
       duration: 0.4,
-      ease: PREMIUM_EASE as any
+      ease: PREMIUM_EASE
     }
   }
 }
@@ -236,29 +232,27 @@ export const cardHover = {
 // Legacy animations (keeping for compatibility)
 export const fadeIn = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.6, ease: PREMIUM_EASE as any } }
+  show: { opacity: 1, transition: { duration: 0.6, ease: PREMIUM_EASE } }
 }
 
 export const slideInLeft = {
   hidden: { opacity: 0, x: -60 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: PREMIUM_EASE as any } }
+  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: PREMIUM_EASE } }
 }
 
 export const slideInRight = {
   hidden: { opacity: 0, x: 60 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: PREMIUM_EASE as any } }
+  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: PREMIUM_EASE } }
 }
 
 export const scaleIn = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    transition: { 
-      duration: 0.6, 
-      ease: BOUNCE_EASE as any,
-      type: "spring" as const,
-      bounce: 0.2
-    } 
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: BOUNCE_EASE
+    }
   }
 }

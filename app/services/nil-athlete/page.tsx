@@ -349,9 +349,10 @@ export default function NILAthletePage() {
                 className="relative"
               >
                 <motion.div
-                  whileHover={!isMobile ? (magneticHover.hover as any) : undefined}
-                  whileTap={isMobile ? (mobileButtonPress as any) : { scale: 0.95 }}
-                  initial={!isMobile ? (magneticHover.rest as any) : (mobileButtonPress.rest as any)}
+                  variants={!isMobile ? magneticHover : mobileButtonPress}
+                  initial={!isMobile ? "rest" : "rest"}
+                  whileHover={!isMobile ? "hover" : undefined}
+                  whileTap={isMobile ? "tap" : { scale: 0.95 }}
                   ref={isMobile ? ctaRipple.ref : undefined}
                 >
                   <Button
@@ -458,9 +459,10 @@ export default function NILAthletePage() {
                 ][index]
                 
                 return (
-                  <motion.article 
-                    key={index} 
+                  <motion.article
+                    key={index}
                     variants={isMobile ? mobileCardHover : cardHover}
+                    initial={isMobile ? "rest" : undefined}
                     className="group relative overflow-hidden p-6 sm:p-8 border-2 rounded-2xl sm:rounded-3xl backdrop-blur-sm transition-all duration-500"
                     style={{
                       backgroundColor: `rgb(var(--${colors.bg}))`,
@@ -471,7 +473,7 @@ export default function NILAthletePage() {
                       y: -4,
                       boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.08)"
                     } : undefined}
-                    whileTap={isMobile ? mobileCardHover.tap : undefined}
+                    whileTap={isMobile ? "tap" : undefined}
                     data-cursor-text={!isMobile ? service.title : undefined}
                   >
                     {/* Animated background gradient */}

@@ -70,7 +70,7 @@ export function useMobileScrollVelocity() {
 // Touch ripple effect (simplified)
 export function useTouchRipple() {
   const [ripples, setRipples] = useState<Array<{id: number, x: number, y: number}>>([])
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   return { ripples: [], ref }
 }

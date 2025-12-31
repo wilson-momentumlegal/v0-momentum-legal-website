@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
@@ -7,7 +9,10 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https:",
-      "script-src 'self' 'unsafe-inline' https://vitals.vercel-insights.com",
+      // Allow unsafe-eval in dev for React Refresh (hot reloading), strict in production
+      isDev
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vitals.vercel-insights.com https://va.vercel-scripts.com"
+        : "script-src 'self' 'unsafe-inline' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
       "connect-src 'self' https://api.emailjs.com https://vitals.vercel-insights.com https://analytics.vercel.com",
       "form-action 'self'",
       "frame-ancestors 'none'",
@@ -34,6 +39,10 @@ const securityHeaders = [
 const nextConfig = {
   images: {
     unoptimized: true,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/webp'],
+    qualities: [75, 85],
   },
   async headers() {
     return [
