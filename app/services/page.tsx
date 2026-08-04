@@ -59,6 +59,7 @@ export default function ServicesPage() {
       alt: "Corporate financial data and market analysis",
       icon: <Building className="h-8 w-8" />,
       id: "corporate-venture",
+      href: "/services/corporate-venture",
       services: [
         "Entity Formation and Structuring: LLCs, C‑Corps, partnerships, governance documents.",
         "Venture Financings & Investor Transactions: Represent VC funds, startups, and investors in debt and equity financings.",
@@ -74,6 +75,7 @@ export default function ServicesPage() {
       alt: "Technology and commercial transactions",
       icon: <Code className="h-8 w-8" />,
       id: "commercial-technology",
+      href: "/services/commercial-technology",
       services: [
         "Technology licensing & SaaS agreements",
         "Software development & integration agreements",
@@ -92,6 +94,7 @@ export default function ServicesPage() {
       alt: "Sports and Athletes",
       icon: <Trophy className="h-8 w-8" />,
       id: "nil-athlete",
+      href: "/services/nil-athlete",
       services: [
         "NIL Contract Drafting & Negotiation: Endorsements, sponsorships, appearances, social media deals.",
         "Brand & IP Protection: Trademark filings, publicity rights, licensing deals.",
@@ -107,6 +110,7 @@ export default function ServicesPage() {
       alt: "Valley Christian Warriors football field and athletic complex",
       icon: <Users className="h-8 w-8" />,
       id: "collective",
+      href: "/services/collective",
       services: [
         "Entity Structuring: For‑profit vs nonprofit, tax strategy, governance.",
         "Compliance Policies: NIL rule navigation, NCAA & CSC regulatory alignment.",
@@ -122,6 +126,7 @@ export default function ServicesPage() {
       alt: "Stack of branded sportswear t-shirts (Reebok, Adidas, Nike, Champion)",
       icon: <Briefcase className="h-8 w-8" />,
       id: "brand-sponsor",
+      href: "/services/brand-sponsor",
       services: [
         "Athlete Sponsorship Deals: Negotiation, drafting, compliance checks.",
         "Campaign Structuring: Social media, merchandise, appearances, joint ventures.",
@@ -136,6 +141,7 @@ export default function ServicesPage() {
       alt: "Historic university building with Gothic architecture",
       icon: <GraduationCap className="h-8 w-8" />,
       id: "university-institutional",
+      href: "/services/university-institutional",
       services: [
         "Policy Drafting: NIL handbooks, compliance guides, contract templates.",
         "Workshops & Training: For compliance officers, athletes, and coaches.",
@@ -185,23 +191,23 @@ export default function ServicesPage() {
                   variants={fadeUp}
                 >
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Our Services
+                  Corporate · Commercial · Sports &amp; NIL
                 </motion.div>
 
                 <motion.h1 
                   className="lg:text-7xl leading-none text-5xl font-light text-white tracking-tight"
                   variants={fadeUp}
                 >
-                  Legal
+                  Counsel for transactions,
                   <br />
-                  <span className="font-medium">Services</span>
+                  <span className="font-medium">growth, and opportunity.</span>
                 </motion.h1>
 
                 <motion.p 
                   className="text-lg lg:text-xl font-light leading-relaxed max-w-3xl text-gray-200"
                   variants={fadeUp}
                 >
-                  At Momentum Legal, we deliver more than just legal services—we provide the clarity, protection, and momentum you need to succeed. Whether you're closing a venture deal, navigating NIL opportunities, or building institutional compliance, our mission is to turn your complex challenges into lasting opportunities. We help you move forward with confidence and security.
+                  Practical, business-first advice for companies and investors, together with dedicated counsel for athletes, collectives, brands, sponsors, and institutions.
                 </motion.p>
               </div>
             </motion.div>
@@ -229,6 +235,24 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
+                {index === 0 && (
+                  <div className="mb-12 border-b border-gray-300 pb-8">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Corporate &amp; commercial counsel</p>
+                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">For Companies &amp; Investors</h2>
+                    <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-600">
+                      Counsel across the business lifecycle—from formation and financing through commercial expansion, acquisitions, and strategic exits.
+                    </p>
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="mb-12 mt-8 border-b border-gray-300 pb-8 pt-12">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Also serving the sports ecosystem</p>
+                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">Sports &amp; NIL Counsel</h2>
+                    <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-600">
+                      Focused representation for athletes, collectives, brands, sponsors, universities, and other participants navigating commercial and regulatory change.
+                    </p>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
                   {/* Service Image & Icon */}
                   <motion.div 
@@ -263,63 +287,18 @@ export default function ServicesPage() {
                       </p>
                     </div>
 
-                    {/* Service Details */}
-                    <div className="space-y-3">
-                      <h3 className="text-base font-medium text-gray-900 mb-4">Key Services:</h3>
-                      <ul className="space-y-3">
-                        {service.services.map((item, i) => {
-                          // Check if item has a label (contains ': ')
-                          if (item.includes(': ')) {
-                            const [label, description] = item.split(': ')
-                            const subItems = description?.includes(' • ') ? description.split(' • ') : null
-                            return (
-                              <motion.li 
-                                key={i}
-                                className="flex items-start gap-3"
-                                whileHover={{ x: 4 }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
-                                <div className="text-sm font-light leading-relaxed text-gray-600">
-                                  <span className="font-normal text-gray-800">{label}:</span> {subItems ? (
-                                    <ul className="mt-2 space-y-1 ml-4">
-                                      {subItems.map((subItem, j) => (
-                                        <li key={j} className="flex items-start gap-2">
-                                          <span className="text-gray-400">•</span>
-                                          <span>{subItem}</span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  ) : (
-                                    <span> {description}</span>
-                                  )}
-                                </div>
-                              </motion.li>
-                            )
-                          } else {
-                            // Plain bullet point without label
-                            return (
-                              <motion.li 
-                                key={i}
-                                className="flex items-start gap-3"
-                                whileHover={{ x: 4 }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
-                                <div className="text-sm font-light leading-relaxed text-gray-600">
-                                  <span className="font-normal text-gray-800">{item}</span>
-                                </div>
-                              </motion.li>
-                            )
-                          }
-                        })}
-                      </ul>
-                    </div>
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-gray-600"
+                    >
+                      Explore {service.title}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
                 
                 {/* Separator */}
-                {index < services.length - 1 && (
+                {index < services.length - 1 && index !== 1 && (
                   <div className="mt-12 pt-12 border-t border-gray-100"></div>
                 )}
               </motion.div>
@@ -344,7 +323,7 @@ export default function ServicesPage() {
               <span className="font-medium">started?</span>
             </h2>
             <p className="text-lg font-light leading-relaxed max-w-2xl mx-auto text-gray-300 mb-12">
-              Schedule a free consultation to discuss how our legal services can support your goals and drive your success forward.
+              Tell us what you are building, financing, negotiating, or protecting. We will help identify the right next step.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button 
@@ -353,7 +332,7 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>Schedule Free Consultation</span>
+                <span>Request an Introductory Call</span>
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.button 
@@ -390,7 +369,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate, NIL, and institutional counsel—delivered with clarity, speed, and precision.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -425,18 +404,18 @@ export default function ServicesPage() {
             <div>
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
-                <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
-                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services#university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
+                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
+                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
+                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
+                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
               </div>
             </div>
           </div>
           
           <div className="border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500 border-gray-800">
-            <p>© 2025 Momentum Legal. All rights reserved.</p>
+            <p>© 2026 Momentum Legal. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="/privacy" className="transition-colors hover:text-gray-300">Privacy Policy</a>
               <a href="/terms" className="transition-colors hover:text-gray-300">Terms of Service</a>

@@ -119,8 +119,8 @@ export default function ContactPage() {
                   className="inline-flex gap-2 w-fit text-xs font-medium text-gray-700 bg-gray-100 pt-2 pr-4 pb-2 pl-4 items-center"
                   variants={fadeUp}
                 >
-                  <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Contact Us
+                  <div className="w-2 h-2 rounded-full bg-gray-900"></div>
+                  Contact Momentum Legal
                 </motion.div>
 
                 <motion.h1 
@@ -136,7 +136,7 @@ export default function ContactPage() {
                   className="text-lg lg:text-xl font-light leading-relaxed max-w-3xl text-gray-600"
                   variants={fadeUp}
                 >
-                  Ready to drive your vision forward? Connect with us today for a free consultation and discover how we can turn your complex challenges into lasting opportunities.
+                  Tell us what you are building, financing, negotiating, or protecting. We will review the matter and follow up to discuss the right next step.
                 </motion.p>
               </div>
             </motion.div>
@@ -151,30 +151,30 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
               {/* Contact Information */}
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 ring-1 ring-emerald-200 text-xs text-emerald-800 bg-emerald-100 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
-                  Now booking Q4 2025
+                <div className="inline-flex items-center gap-2 ring-1 ring-gray-300 text-xs text-gray-700 bg-gray-100 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-900"></span>
+                  Now accepting new matters
                 </div>
                 <h4 className="text-xl sm:text-2xl text-gray-900 font-medium tracking-tight">
-                  Ready to drive your vision forward?
+                  Start with an introductory call.
                 </h4>
                 <ul className="text-sm text-gray-700 space-y-3">
                   <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Free consultation and case assessment</span>
+                    <Check className="w-4 h-4 text-gray-900 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>A focused conversation about the matter and your objectives</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Clear pricing, flexible engagement models</span>
+                    <Check className="w-4 h-4 text-gray-900 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Clear scope and flexible engagement models</span>
                   </li>
                 </ul>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-2 text-sm">
-                  <a href="mailto:info@momentumlegalpc.com" className="inline-flex items-center gap-2 text-gray-700 hover:text-emerald-600 transition">
+                  <a href="mailto:info@momentumlegalpc.com" className="inline-flex items-center gap-2 text-gray-700 hover:text-black transition">
                     <Mail className="w-4 h-4" strokeWidth={1.5} />
                     info@momentumlegalpc.com
                   </a>
                   <span className="text-gray-400 hidden sm:inline">•</span>
-                  <a href="tel:415-404-9232" className="inline-flex items-center gap-2 text-gray-700 hover:text-emerald-600 transition">
+                  <a href="tel:415-404-9232" className="inline-flex items-center gap-2 text-gray-700 hover:text-black transition">
                     <Phone className="w-4 h-4" strokeWidth={1.5} />
                     415-404-9232
                   </a>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                       required 
                       placeholder="Your name" 
                       maxLength={120}
-                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
                   <div className="sm:col-span-1">
@@ -218,7 +218,7 @@ export default function ContactPage() {
                       required 
                       placeholder="you@company.com" 
                       maxLength={190}
-                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
                   <div className="sm:col-span-1">
@@ -230,7 +230,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       placeholder="Company name" 
                       maxLength={160}
-                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     />
                   </div>
                   
@@ -240,7 +240,7 @@ export default function ContactPage() {
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleInputChange}
-                      className="w-full appearance-none outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full appearance-none outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     >
                       <option value="">Select timeline</option>
                       <option value="asap">ASAP</option>
@@ -255,10 +255,11 @@ export default function ContactPage() {
                       name="services"
                       value={formData.services}
                       onChange={handleInputChange}
-                      className="w-full appearance-none outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full appearance-none outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     >
                       <option value="">Select service</option>
                       <option value="corporate">Corporate & Venture</option>
+                      <option value="commercial-technology">Commercial & Technology</option>
                       <option value="nil-athlete">NIL & Athlete Rep</option>
                       <option value="nil-collective">NIL Collective</option>
                       <option value="brand-sponsor">Brand & Sponsor Advisory</option>
@@ -276,7 +277,7 @@ export default function ContactPage() {
                       required
                       maxLength={2000}
                       placeholder="Describe your legal needs, goals, timeline..." 
-                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-300 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
+                      className="w-full placeholder-gray-500 outline-none focus:ring-2 focus:ring-gray-400/60 focus:border-gray-400 transition text-sm text-gray-900 bg-white border-gray-200 border rounded-xl pt-2.5 pr-3 pb-2.5 pl-3"
                     ></textarea>
                   </div>
                   {errorMessage && (
@@ -285,11 +286,11 @@ export default function ContactPage() {
                     </div>
                   )}
                   <div className="sm:col-span-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <p className="text-xs text-gray-600">We'll get back to you within 24 hours with next steps.</p>
+                    <p className="text-xs text-gray-600">We typically respond within one business day with next steps.</p>
                     <button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="inline-flex gap-2 ring-1 ring-emerald-300 hover:bg-emerald-300 transition text-sm font-medium text-white bg-emerald-500 rounded-xl pt-2.5 pr-4 pb-2.5 pl-4 shadow items-center disabled:opacity-50"
+                      className="inline-flex gap-2 ring-1 ring-gray-900 hover:bg-gray-800 transition text-sm font-medium text-white bg-black rounded-xl pt-2.5 pr-4 pb-2.5 pl-4 shadow items-center disabled:opacity-50"
                     >
                       <Send className="w-4 h-4" strokeWidth={1.5} />
                       {isSubmitting ? 'Sending...' : 'Send inquiry'}
@@ -303,12 +304,12 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-8 h-8 text-emerald-600" />
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-8 h-8 text-gray-900" />
                   </div>
                   <h3 className="text-2xl font-medium mb-2 text-gray-900">Thank You!</h3>
                   <p className="text-gray-600 mb-6">
-                    We've received your inquiry and will get back to you within 24 hours.
+                    We've received your inquiry and typically respond within one business day.
                   </p>
                   <motion.button
                     onClick={() => {
@@ -357,7 +358,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate, NIL, and institutional counsel—delivered with clarity, speed, and precision.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -392,17 +393,18 @@ export default function ContactPage() {
             <div>
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
-                <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
-                <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services#university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
+                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
+                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
+                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
+                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
               </div>
             </div>
           </div>
           
           <div className="border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500 border-gray-800">
-            <p>© 2025 Momentum Legal. All rights reserved.</p>
+            <p>© 2026 Momentum Legal. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="/privacy" className="transition-colors hover:text-gray-300">Privacy Policy</a>
               <a href="/terms" className="transition-colors hover:text-gray-300">Terms of Service</a>

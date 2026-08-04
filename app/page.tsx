@@ -281,7 +281,7 @@ export default function MomentumLegalV2() {
                 ].map((service) => (
                   <a
                     key={service.anchor}
-                    href={`/services#${service.anchor}`}
+                    href={`/services/${service.anchor}`}
                     className="group flex items-center justify-between gap-6 border-b border-gray-300 py-6 last:border-b-0"
                   >
                     <span className="text-xl font-medium lg:text-2xl">{service.title}</span>
@@ -289,7 +289,7 @@ export default function MomentumLegalV2() {
                   </a>
                 ))}
               </div>
-              <a href="/services#corporate-venture" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
+              <a href="/services/corporate-venture" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
                 View Corporate Services
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -316,7 +316,7 @@ export default function MomentumLegalV2() {
                 ].map((service) => (
                   <a
                     key={service.anchor}
-                    href={`/services#${service.anchor}`}
+                    href={`/services/${service.anchor}`}
                     className="group flex items-center justify-between gap-6 border-b border-white/20 py-4 last:border-b-0"
                   >
                     <span className="text-lg font-medium">{service.title}</span>
@@ -324,7 +324,7 @@ export default function MomentumLegalV2() {
                   </a>
                 ))}
               </div>
-              <a href="/services#nil-athlete" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
+              <a href="/services/nil-athlete" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
                 Explore Sports &amp; NIL Services
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -687,12 +687,12 @@ export default function MomentumLegalV2() {
             <div>
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
-                <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
-                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services#university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
+                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
+                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
+                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
+                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
               </div>
             </div>
           </div>

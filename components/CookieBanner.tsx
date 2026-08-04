@@ -3,23 +3,20 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false)
 
   useEffect(() => {
-    // Check if user has already accepted cookies
-    const hasAccepted = localStorage.getItem('cookiesAccepted')
-    if (!hasAccepted) {
-      // Show banner after a brief delay for better UX
+    const hasSeenNotice = localStorage.getItem('cookieNoticeSeen') || localStorage.getItem('cookiesAccepted')
+    if (!hasSeenNotice) {
       const timer = setTimeout(() => setShowBanner(true), 1000)
       return () => clearTimeout(timer)
     }
   }, [])
 
-  const acceptCookies = () => {
-    localStorage.setItem('cookiesAccepted', 'true')
+  const dismissNotice = () => {
+    localStorage.setItem('cookieNoticeSeen', 'true')
     setShowBanner(false)
   }
 
@@ -31,37 +28,35 @@ export function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1.0] }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6"
+          className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-5"
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              {/* Content */}
-              <div className="flex-1 pr-4">
-                <p className="text-sm sm:text-base text-gray-900 leading-relaxed">
-                  We use cookies to improve your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies.{' '}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-gray-300 rounded-xl shadow-xl px-4 py-3 sm:px-5 flex items-center justify-between gap-3 sm:gap-5">
+              <div className="flex-1">
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                  This site uses cookies and site analytics to understand traffic and improve the experience.{' '}
                   <a
                     href="/privacy"
-                    className="text-cyan-800 hover:text-cyan-600 underline font-medium transition-colors"
+                    className="text-gray-900 hover:text-gray-600 underline underline-offset-2 font-medium transition-colors"
                   >
                     Learn more
                   </a>
                 </p>
               </div>
 
-              {/* Actions */}
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <Button
-                  onClick={acceptCookies}
-                  className="flex-1 sm:flex-none bg-cyan-800 hover:bg-cyan-700 text-white px-6 py-2.5 text-sm font-semibold shadow-lg transition-all duration-200"
-                >
-                  Accept
-                </Button>
+              <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <button
-                  onClick={acceptCookies}
-                  className="text-gray-400 hover:text-gray-600 transition-colors p-2"
-                  aria-label="Close banner"
+                  onClick={dismissNotice}
+                  className="bg-black hover:bg-gray-800 text-white px-4 py-2 text-xs sm:text-sm font-medium transition-colors"
                 >
-                  <X className="w-5 h-5" />
+                  Got it
+                </button>
+                <button
+                  onClick={dismissNotice}
+                  className="text-gray-400 hover:text-gray-900 transition-colors p-2"
+                  aria-label="Dismiss cookie notice"
+                >
+                  <X className="w-4 h-4" />
                 </button>
               </div>
             </div>
