@@ -251,7 +251,7 @@ export default function AboutPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6 text-gray-900">
-                Education &
+                Experience &
                 <br />
                 <span className="font-medium">Credentials</span>
               </h2>
@@ -267,10 +267,10 @@ export default function AboutPage() {
                   ]
                 },
                 {
-                  category: "Academic Background",
+                  category: "Professional Experience",
                   items: [
-                    { label: "Bachelor of Arts", detail: "Sonoma State University, 2019" },
-                    { label: "Field of Study", detail: "Criminology and Criminal Justice Studies" }
+                    { label: "Goodwin Procter LLP", detail: "Corporate associate" },
+                    { label: "Davis Wright Tremaine LLP", detail: "Corporate associate" }
                   ]
                 },
                 {
@@ -280,10 +280,11 @@ export default function AboutPage() {
                   ]
                 },
                 {
-                  category: "Specializations",
+                  category: "Practice Focus",
                   items: [
-                    { label: "Corporate Transactions", detail: "General corporate, VC funds, startups, M&A" },
-                    { label: "NIL & Sports Law", detail: "Athletes, brands, collectives, compliance" }
+                    { label: "Corporate & Venture Transactions", detail: "Companies, founders, funds, and investors" },
+                    { label: "Commercial & Technology Transactions", detail: "Strategic and IP-driven business relationships" },
+                    { label: "Sports & NIL Counsel", detail: "Athletes, collectives, brands, sponsors, and institutions" }
                   ]
                 }
               ].map((section, index) => (
