@@ -269,6 +269,7 @@ export default function AboutPage() {
                 {
                   category: "Professional Experience",
                   items: [
+                    { label: "Google DeepMind", detail: "IP Counsel" },
                     { label: "Goodwin Procter LLP", detail: "Corporate associate" },
                     { label: "Davis Wright Tremaine LLP", detail: "Corporate associate" }
                   ]
