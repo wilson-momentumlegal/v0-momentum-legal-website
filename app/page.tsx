@@ -175,26 +175,6 @@ export default function MomentumLegalV2() {
                   </motion.button>
                 </motion.div>
 
-                <motion.div
-                  className="max-w-xl border-l-2 border-white/70 bg-black/25 px-5 py-4 backdrop-blur-sm"
-                  variants={fadeUp}
-                >
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
-                    Also serving the sports ecosystem
-                  </p>
-                  <p className="mb-3 text-sm leading-relaxed text-gray-200">
-                    Counsel for athletes, collectives, brands, sponsors, and institutions.
-                  </p>
-                  <a
-                    href="/services#nil-athlete"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gray-200"
-                  >
-                    Explore Sports &amp; NIL Services
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </motion.div>
-
-
               </div>
             </motion.div>
 
@@ -332,6 +312,26 @@ export default function MomentumLegalV2() {
                       </div>
                     </motion.a>
                   ))}
+                </div>
+
+                <div className="border-t border-white/20 pt-8">
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-[1fr_auto] sm:items-end">
+                    <div>
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
+                        Also serving the sports ecosystem
+                      </p>
+                      <p className="max-w-2xl text-lg font-light leading-relaxed text-gray-200">
+                        Counsel for athletes, collectives, brands, sponsors, and institutions.
+                      </p>
+                    </div>
+                    <a
+                      href="/services#nil-athlete"
+                      className="inline-flex w-fit items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gray-300"
+                    >
+                      Explore Sports &amp; NIL Services
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
 
                 {/* Second Row - 2 cards */}
