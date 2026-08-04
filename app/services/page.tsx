@@ -185,23 +185,23 @@ export default function ServicesPage() {
                   variants={fadeUp}
                 >
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Our Services
+                  Corporate · Commercial · Sports &amp; NIL
                 </motion.div>
 
                 <motion.h1 
                   className="lg:text-7xl leading-none text-5xl font-light text-white tracking-tight"
                   variants={fadeUp}
                 >
-                  Legal
+                  Counsel for transactions,
                   <br />
-                  <span className="font-medium">Services</span>
+                  <span className="font-medium">growth, and opportunity.</span>
                 </motion.h1>
 
                 <motion.p 
                   className="text-lg lg:text-xl font-light leading-relaxed max-w-3xl text-gray-200"
                   variants={fadeUp}
                 >
-                  At Momentum Legal, we deliver more than just legal services—we provide the clarity, protection, and momentum you need to succeed. Whether you're closing a venture deal, navigating NIL opportunities, or building institutional compliance, our mission is to turn your complex challenges into lasting opportunities. We help you move forward with confidence and security.
+                  Practical, business-first advice for companies and investors, together with dedicated counsel for athletes, collectives, brands, sponsors, and institutions.
                 </motion.p>
               </div>
             </motion.div>
@@ -229,6 +229,24 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
+                {index === 0 && (
+                  <div className="mb-12 border-b border-gray-300 pb-8">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Corporate &amp; commercial counsel</p>
+                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">For Companies &amp; Investors</h2>
+                    <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-600">
+                      Counsel across the business lifecycle—from formation and financing through commercial expansion, acquisitions, and strategic exits.
+                    </p>
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="mb-12 mt-8 border-b border-gray-300 pb-8 pt-12">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Also serving the sports ecosystem</p>
+                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">Sports &amp; NIL Counsel</h2>
+                    <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-600">
+                      Focused representation for athletes, collectives, brands, sponsors, universities, and other participants navigating commercial and regulatory change.
+                    </p>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
                   {/* Service Image & Icon */}
                   <motion.div 
@@ -319,7 +337,7 @@ export default function ServicesPage() {
                 </div>
                 
                 {/* Separator */}
-                {index < services.length - 1 && (
+                {index < services.length - 1 && index !== 1 && (
                   <div className="mt-12 pt-12 border-t border-gray-100"></div>
                 )}
               </motion.div>
@@ -344,7 +362,7 @@ export default function ServicesPage() {
               <span className="font-medium">started?</span>
             </h2>
             <p className="text-lg font-light leading-relaxed max-w-2xl mx-auto text-gray-300 mb-12">
-              Schedule a free consultation to discuss how our legal services can support your goals and drive your success forward.
+              Tell us what you are building, financing, negotiating, or protecting. We will help identify the right next step.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button 
@@ -353,7 +371,7 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>Schedule Free Consultation</span>
+                <span>Request an Introductory Call</span>
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.button 
@@ -436,7 +454,7 @@ export default function ServicesPage() {
           </div>
           
           <div className="border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500 border-gray-800">
-            <p>© 2025 Momentum Legal. All rights reserved.</p>
+            <p>© 2026 Momentum Legal. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="/privacy" className="transition-colors hover:text-gray-300">Privacy Policy</a>
               <a href="/terms" className="transition-colors hover:text-gray-300">Terms of Service</a>

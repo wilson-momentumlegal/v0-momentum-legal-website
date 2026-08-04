@@ -86,23 +86,23 @@ export default function AboutPage() {
                   variants={fadeUp}
                 >
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  About Momentum Legal
+                  Senior counsel · Direct attention
                 </motion.div>
 
                 <motion.h1 
                   className="lg:text-7xl leading-none text-5xl font-light text-white tracking-tight"
                   variants={fadeUp}
                 >
-                  About
+                  BigLaw experience.
                   <br />
-                  <span className="font-medium">Momentum Legal</span>
+                  <span className="font-medium">Entrepreneurial perspective.</span>
                 </motion.h1>
 
                 <motion.p 
                   className="text-lg lg:text-xl font-light leading-relaxed max-w-3xl text-gray-200"
                   variants={fadeUp}
                 >
-                  Discover the vision, values, and expertise that drive our commitment to excellence in legal representation.
+                  Momentum Legal combines sophisticated transaction experience with practical judgment, responsiveness, and direct partner-level attention.
                 </motion.p>
               </div>
             </motion.div>
@@ -121,12 +121,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-8 text-gray-900">
-              Our
+              Built for
               <br />
-              <span className="font-medium">Mission</span>
+              <span className="font-medium">decisive clients.</span>
             </h2>
             <p className="text-lg lg:text-xl font-light leading-relaxed text-gray-600 mb-12">
-              Our mission at Momentum Legal is to empower you to seize opportunities with clarity, confidence, and creative legal solutions. We thrive at the dynamic intersection of business, technology, and innovation, providing practical guidance for entrepreneurs, investors, athletes, and institutions in fast-moving markets. We are dedicated to protecting your interests, minimizing risk, and fostering lasting growth for those who dare to redefine what's possible.
+              We advise companies, investors, and participants across the sports ecosystem when legal decisions carry meaningful commercial consequences. Our role is to clarify the risk, protect the client’s position, and help move the underlying objective forward—with advice that is rigorous, direct, and grounded in how business actually gets done.
             </p>
           </motion.div>
         </div>
@@ -154,23 +154,19 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-lg font-light leading-relaxed text-gray-600">
                 <p>
-                  Momentum Legal was founded by Wilson Hall, a corporate and business transactions attorney with a proven track record in complex deals. He has guided venture-backed startups, including those valued at over $1 billion, and advised Fortune 500 companies through global business challenges.
+                  Wilson Hall founded Momentum Legal after practicing at Goodwin Procter LLP and Davis Wright Tremaine LLP. His experience spans mergers and acquisitions, venture and growth financings, commercial transactions, corporate governance, and strategic matters for companies and investors.
                 </p>
                 
                 <p>
-                  As the son of an entrepreneur, Wilson brings a unique, hands-on perspective to every client relationship. He understands the drive to build something new and the critical role of trusted advisors in transforming vision into reality.
+                  His prior representations include matters ranging from early-stage financings to transactions with disclosed values of up to $1 billion. That experience informs a disciplined approach to diligence, negotiation, documentation, and closing execution.
                 </p>
                 
                 <p>
-                  Wilson's legal foundation was forged at Santa Clara University School of Law, where he earned his Juris Doctor and a High Tech Law Certificate with an Intellectual Property Specialization. This Silicon Valley training equipped him with expertise in both cutting-edge technologies and traditional business law.
+                  As the son of an entrepreneur, Wilson also understands the practical pressure behind legal decisions: limited time, finite resources, competing stakeholders, and the need to keep momentum. Clients work directly with him throughout the engagement.
                 </p>
                 
                 <p>
-                  Momentum Legal embodies Wilson's core values: initiative, innovation, and integrity. This firm was built for clients who are ready to take charge, pursue ambitious goals, and partner with a lawyer who not only commands the law, but deeply understands the fast-paced business realities of today's competitive markets.
-                </p>
-
-                <p>
-                Prior to founding Momentum Legal, Wilson was a BigLaw associate at Goodwin Procter LLP and Davis Wright Tremaine LLP.
+                  Wilson earned his Juris Doctor and High Tech Law Certificate with an Intellectual Property Specialization from Santa Clara University School of Law. His technology-focused training supports his work with innovative businesses, commercial arrangements, and IP-driven opportunities.
                 </p>
               </div>
             </motion.div>
@@ -214,12 +210,12 @@ export default function AboutPage() {
 
               {/* Core Values */}
               <div className="bg-white p-8 border border-gray-100">
-                <h3 className="text-lg font-medium mb-6 text-gray-900">Core Values</h3>
+                <h3 className="text-lg font-medium mb-6 text-gray-900">How We Work</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: <Award className="h-5 w-5" />, title: "Initiative", description: "Taking proactive action for client success" },
-                    { icon: <Building className="h-5 w-5" />, title: "Innovation", description: "Leveraging cutting-edge solutions and strategies" },
-                    { icon: <Briefcase className="h-5 w-5" />, title: "Integrity", description: "Maintaining the highest ethical standards" }
+                    { icon: <Award className="h-5 w-5" />, title: "Commercial Judgment", description: "Advice calibrated to the business objective" },
+                    { icon: <Building className="h-5 w-5" />, title: "Direct Access", description: "Senior attention throughout the engagement" },
+                    { icon: <Briefcase className="h-5 w-5" />, title: "Execution", description: "Clear ownership, responsiveness, and follow-through" }
                   ].map((value, index) => (
                     <motion.div 
                       key={index}
@@ -331,7 +327,7 @@ export default function AboutPage() {
               <span className="font-medium">Momentum Legal?</span>
             </h2>
             <p className="text-lg font-light leading-relaxed max-w-2xl mx-auto text-gray-300 mb-12">
-              Schedule a free consultation with Wilson Hall and discover how Momentum Legal can drive your vision forward with clarity, confidence, and creative solutions.
+              Tell us about the transaction, growth decision, or strategic challenge in front of you. We typically respond within one business day.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button 
@@ -340,7 +336,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>Schedule Free Consultation</span>
+                <span>Request an Introductory Call</span>
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.button 
@@ -423,7 +419,7 @@ export default function AboutPage() {
           </div>
           
           <div className="border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500 border-gray-800">
-            <p>© 2025 Momentum Legal. All rights reserved.</p>
+            <p>© 2026 Momentum Legal. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="/privacy" className="transition-colors hover:text-gray-300">Privacy Policy</a>
               <a href="/terms" className="transition-colors hover:text-gray-300">Terms of Service</a>
