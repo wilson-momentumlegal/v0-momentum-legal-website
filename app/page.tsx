@@ -88,7 +88,7 @@ export default function MomentumLegalV2() {
   }
 
   return (
-    <div className="min-h-full bg-gray-50 text-gray-900 font-inter">
+    <div className="min-h-full overflow-x-hidden bg-gray-50 text-gray-900 font-inter">
       <Navigation currentPage="home" />
 
       {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function MomentumLegalV2() {
                   variants={fadeUp}
                 >
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Speed & Precision
+                  Corporate · Commercial · Investor Counsel
                 </motion.div>
 
                 <div className="space-y-6">
@@ -126,23 +126,29 @@ export default function MomentumLegalV2() {
                     className="lg:text-7xl leading-none text-5xl font-light text-white tracking-tight"
                     variants={fadeUp}
                   >
-                    Momentum<br />
-                    <span className="font-medium">Legal</span><br />
-                    <span className="text-gray-200">The Power Behind Your Next Deal</span>
+                    Counsel for<br />
+                    <span className="font-medium">Companies &amp; Investors</span>
                   </motion.h1>
+
+                  <motion.p
+                    className="max-w-xl text-2xl font-medium leading-tight text-white lg:text-3xl"
+                    variants={fadeUp}
+                  >
+                    When the stakes are high and momentum matters.
+                  </motion.p>
 
                   <motion.p 
                     className="text-lg lg:text-xl font-light leading-relaxed max-w-lg text-gray-200"
                     variants={fadeUp}
                   >
-                    Corporate, Commercial, and Institutional Counsel for innovation, ambitious clients, and dynamic markets.
+                    Momentum Legal advises founders, growth companies, funds, and strategic investors on financings, M&amp;A, commercial agreements, and ongoing corporate matters.
                   </motion.p>
 
                   <motion.p 
                     className="text-sm lg:text-base font-light leading-relaxed max-w-lg text-gray-300"
                     variants={fadeUp}
                   >
-                    We serve as trusted advisors to founders, companies, investors, athletes, and institutions to structure transactions, protect IP, and deliver practical, outcome-focused legal guidance.
+                    Practical, business-first guidance designed to protect the downside, preserve momentum, and keep the commercial objective in view.
                   </motion.p>
                 </div>
 
@@ -156,7 +162,7 @@ export default function MomentumLegalV2() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span>Start a Conversation</span>
+                    <span>Discuss a Transaction</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.button>
                   <motion.button 
@@ -165,10 +171,9 @@ export default function MomentumLegalV2() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Explore Services
+                    Explore Corporate Services
                   </motion.button>
                 </motion.div>
-
 
               </div>
             </motion.div>
@@ -177,162 +182,217 @@ export default function MomentumLegalV2() {
         </div>
       </section>
 
+      {/* Audience Pathways */}
+      <section aria-labelledby="audience-heading" className="bg-gray-50 py-24">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-14 max-w-3xl"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 mb-4">Choose your path</p>
+            <h2 id="audience-heading" className="text-3xl lg:text-5xl font-light tracking-tight text-gray-900">
+              Counsel aligned to your side of the table.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 border-y border-gray-300">
+            <motion.a
+              href="/services#corporate-venture"
+              className="group py-12 lg:pr-14 lg:border-r border-gray-300"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className="text-sm font-medium text-gray-500 mb-5">FOR COMPANIES</p>
+                  <h3 className="text-3xl font-medium text-gray-900 mb-6">Build, finance, transact, and scale.</h3>
+                  <p className="text-lg font-light leading-relaxed text-gray-600 max-w-xl">
+                    Formation, governance, founder equity, venture financings, M&amp;A, commercial contracts, and fractional general counsel.
+                  </p>
+                </div>
+                <ArrowRight className="h-6 w-6 shrink-0 text-gray-500 group-hover:translate-x-1 group-hover:text-black transition-all" />
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="/services#corporate-venture"
+              className="group py-12 lg:pl-14 border-t lg:border-t-0 border-gray-300"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className="text-sm font-medium text-gray-500 mb-5">FOR INVESTORS</p>
+                  <h3 className="text-3xl font-medium text-gray-900 mb-6">Diligence, negotiate, and close with confidence.</h3>
+                  <p className="text-lg font-light leading-relaxed text-gray-600 max-w-xl">
+                    Investor-side diligence, financing documents, governance, follow-on transactions, portfolio matters, and strategic exits.
+                  </p>
+                </div>
+                <ArrowRight className="h-6 w-6 shrink-0 text-gray-500 group-hover:translate-x-1 group-hover:text-black transition-all" />
+              </div>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="bg-black pt-24 pb-24">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Section Header */}
-            <motion.div 
-              className="lg:col-span-1 flex flex-col justify-center"
+          <motion.div
+              className="mb-14 max-w-3xl"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6 text-white">
-                Our
-                <br />
-                <span className="font-medium">Services</span>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Our services</p>
+              <h2 className="mb-6 text-3xl font-light tracking-tight text-white lg:text-5xl">
+                Counsel structured around your objectives.
               </h2>
-              <p className="text-lg font-light leading-relaxed text-gray-300">
-              Practical, business‑first counsel across corporate, commercial, name, image, and likeness (NIL), and institutional needs—so you can move decisively and maximize opportunities.
+              <p className="text-lg font-light leading-relaxed text-gray-300 lg:text-xl">
+                Business-first counsel across transactions, commercial relationships, and strategic opportunities.
+              </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+            <motion.div
+              className="bg-gray-100 p-8 text-gray-900 lg:col-span-7 lg:p-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Corporate &amp; commercial counsel</p>
+              <h3 className="mb-3 text-3xl font-medium tracking-tight lg:text-4xl">Companies &amp; Investors</h3>
+              <p className="mb-10 max-w-2xl text-base font-light leading-relaxed text-gray-600 lg:text-lg">
+                Strategic counsel for building, financing, operating, acquiring, and exiting businesses.
+              </p>
+              <div className="border-y border-gray-300">
+                {[
+                  { title: "Corporate & Venture Transactions", anchor: "corporate-venture" },
+                  { title: "Commercial & Technology Transactions", anchor: "commercial-technology" }
+                ].map((service) => (
+                  <a
+                    key={service.anchor}
+                    href={`/services#${service.anchor}`}
+                    className="group flex items-center justify-between gap-6 border-b border-gray-300 py-6 last:border-b-0"
+                  >
+                    <span className="text-xl font-medium lg:text-2xl">{service.title}</span>
+                    <ArrowRight className="h-5 w-5 shrink-0 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:text-black" />
+                  </a>
+                ))}
+              </div>
+              <a href="/services#corporate-venture" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
+                View Corporate Services
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </motion.div>
+
+            <motion.div
+              className="border border-white/20 bg-white/[0.06] p-8 text-white lg:col-span-5 lg:p-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Also serving the sports ecosystem</p>
+              <h3 className="mb-3 text-3xl font-medium tracking-tight">Sports &amp; NIL</h3>
+              <p className="mb-8 text-base font-light leading-relaxed text-gray-300">
+                Counsel for athletes, collectives, brands, sponsors, and institutions.
+              </p>
+              <div className="border-y border-white/20">
+                {[
+                  { title: "Athletes", anchor: "nil-athlete" },
+                  { title: "Collectives", anchor: "collective" },
+                  { title: "Brands & Sponsors", anchor: "brand-sponsor" },
+                  { title: "Universities & Institutions", anchor: "university-institutional" }
+                ].map((service) => (
+                  <a
+                    key={service.anchor}
+                    href={`/services#${service.anchor}`}
+                    className="group flex items-center justify-between gap-6 border-b border-white/20 py-4 last:border-b-0"
+                  >
+                    <span className="text-lg font-medium">{service.title}</span>
+                    <ArrowRight className="h-4 w-4 shrink-0 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:text-white" />
+                  </a>
+                ))}
+              </div>
+              <a href="/services#nil-athlete" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                Explore Sports &amp; NIL Services
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Selected Transaction Experience */}
+      <section aria-labelledby="experience-heading" className="py-24 bg-white">
+        <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <motion.div
+              className="lg:col-span-4"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 mb-4">Selected experience</p>
+              <h2 id="experience-heading" className="text-3xl lg:text-5xl font-light tracking-tight text-gray-900 mb-6">
+                Transaction discipline for high-stakes decisions.
+              </h2>
+              <p className="text-lg font-light leading-relaxed text-gray-600">
+                Experience across M&amp;A, venture capital, and growth equity matters for companies, funds, and institutional investors.
               </p>
             </motion.div>
 
-            {/* Services Grid */}
-            <motion.div 
-              className="lg:col-span-2"
-              initial={{ opacity: 0, y: 50 }}
+            <motion.div
+              className="lg:col-span-8"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="space-y-6">
-                {/* First Row - 2 cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Corporate & Venture Transactions",
-                      gradient: "bg-gradient-to-tr from-slate-800 to-slate-600",
-                      ring: "ring-slate-400/30",
-                      anchor: "corporate-venture"
-                    },
-                    {
-                      title: "Commercial & Technology Transactions",
-                      gradient: "bg-gradient-to-tr from-slate-700 to-slate-500",
-                      ring: "ring-slate-400/30",
-                      anchor: "commercial-technology"
-                    }
-                  ].map((service, index) => (
-                    <motion.a 
-                      key={index}
-                      href={`/services#${service.anchor}`}
-                      className={`group relative overflow-hidden ring-1 ${service.ring} text-white ${service.gradient} rounded-2xl p-5 transition-all duration-300 cursor-pointer hover:shadow-xl block`}
-                      whileHover={{ y: -4, scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div 
-                        className="absolute inset-0"
-                        style={{
-                          background: "radial-gradient(160px 160px at 30% 30%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(220px 220px at 70% 70%, rgba(0,0,0,0.25), transparent 60%)"
-                        }}
-                      />
-                      <div className="relative flex flex-col h-full justify-between">
-                        <h3 className="text-2xl font-semibold mb-6 text-white leading-tight">{service.title}</h3>
-                        <div className="flex justify-end">
-                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 border-y border-gray-300">
+                {[
+                  { value: "$1.80B+", label: "Aggregate disclosed value" },
+                  { value: "13", label: "Selected transactions" },
+                  { value: "$2M–$1B", label: "Disclosed matter range" },
+                ].map((item, index) => (
+                  <div key={item.label} className={`py-9 ${index > 0 ? "sm:border-l sm:pl-8 border-gray-300" : ""}`}>
+                    <p className="text-4xl lg:text-5xl font-medium tracking-tight text-gray-900 mb-3">{item.value}</p>
+                    <p className="text-sm font-medium uppercase tracking-wide text-gray-500">{item.label}</p>
+                  </div>
+                ))}
+              </div>
 
-                {/* Second Row - 2 cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "NIL & Athlete Representation",
-                      gradient: "bg-gradient-to-tr from-gray-800 to-gray-600",
-                      ring: "ring-gray-400/30",
-                      anchor: "nil-athlete"
-                    },
-                    {
-                      title: "NIL Collective Representation",
-                      gradient: "bg-gradient-to-tr from-zinc-800 to-zinc-600",
-                      ring: "ring-zinc-400/30",
-                      anchor: "collective"
-                    }
-                  ].map((service, index) => (
-                    <motion.a 
-                      key={index}
-                      href={`/services#${service.anchor}`}
-                      className={`group relative overflow-hidden ring-1 ${service.ring} text-white ${service.gradient} rounded-2xl p-5 transition-all duration-300 cursor-pointer hover:shadow-xl block`}
-                      whileHover={{ y: -4, scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div 
-                        className="absolute inset-0"
-                        style={{
-                          background: "radial-gradient(160px 160px at 30% 30%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(220px 220px at 70% 70%, rgba(0,0,0,0.25), transparent 60%)"
-                        }}
-                      />
-                      <div className="relative flex flex-col h-full justify-between">
-                        <h3 className="text-2xl font-semibold mb-6 text-white leading-tight">{service.title}</h3>
-                        <div className="flex justify-end">
-                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div>
+                  <p className="text-sm font-medium text-gray-900 mb-3">Representative matters</p>
+                  <p className="text-base font-light leading-relaxed text-gray-600">
+                    A $1 billion all-stock biotechnology sale, a $225 million acquisition, a $46 million Series B investment, and a $20 million AI platform financing.
+                  </p>
                 </div>
-
-                {/* Third Row - 2 cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Brand & Sponsor Advisory",
-                      gradient: "bg-gradient-to-tr from-neutral-800 to-neutral-600",
-                      ring: "ring-neutral-400/30",
-                      anchor: "brand-sponsor"
-                    },
-                    {
-                      title: "University & Institutional Counsel",
-                      gradient: "bg-gradient-to-tr from-stone-800 to-stone-600",
-                      ring: "ring-stone-400/30",
-                      anchor: "university-institutional"
-                    }
-                  ].map((service, index) => (
-                    <motion.a 
-                      key={index}
-                      href={`/services#${service.anchor}`}
-                      className={`group relative overflow-hidden ring-1 ${service.ring} text-white ${service.gradient} rounded-2xl p-5 transition-all duration-300 cursor-pointer hover:shadow-xl block`}
-                      whileHover={{ y: -4, scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div 
-                        className="absolute inset-0"
-                        style={{
-                          background: "radial-gradient(160px 160px at 30% 30%, rgba(255,255,255,0.25), transparent 60%), radial-gradient(220px 220px at 70% 70%, rgba(0,0,0,0.25), transparent 60%)"
-                        }}
-                      />
-                      <div className="relative flex flex-col h-full justify-between">
-                        <h3 className="text-2xl font-semibold mb-6 text-white leading-tight">{service.title}</h3>
-                        <div className="flex justify-end">
-                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.a>
-                  ))}
+                <div>
+                  <p className="text-sm font-medium text-gray-900 mb-3">Representative sectors</p>
+                  <p className="text-base font-light leading-relaxed text-gray-600">
+                    Technology, sports, healthcare, biopharma, franchising, professional services, enterprise software, and consumer products.
+                  </p>
                 </div>
               </div>
+
+              <p className="mt-10 text-xs leading-relaxed text-gray-500">
+                Selected prior representations. Some matters may have been completed at prior firms. Past results do not guarantee a similar outcome.
+              </p>
             </motion.div>
-          </div>      
+          </div>
         </div>
       </section>
 
@@ -348,12 +408,12 @@ export default function MomentumLegalV2() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6 text-gray-900">
-                About
+                BigLaw transaction experience.
                 <br />
-                <span className="font-medium">Momentum Legal</span>
+                <span className="font-medium">Entrepreneurial perspective.</span>
               </h2>
               <p className="text-lg font-light leading-relaxed text-gray-600 mb-8">
-              We deliver modern business counsel to founders, athletes, brands, collectives, and institutions—forward vision, steady guidance, and sustainable growth.
+                Momentum Legal delivers senior, commercially grounded counsel with the responsiveness and direct attention ambitious clients expect.
               </p>
               <button 
                 onClick={() => window.location.href = '/about'}
@@ -372,7 +432,7 @@ export default function MomentumLegalV2() {
               <div className="p-8 border border-gray-100 bg-white">
                 <h3 className="text-base font-medium mb-3 text-gray-900">About the Founder — Wilson Hall</h3>
                 <p className="text-sm font-light leading-relaxed text-gray-600 mb-6">
-                  Wilson advises across corporate transactions, NIL matters, and institutional policy, blending practical deal‑making with thoughtful compliance and risk management.
+                  Before founding Momentum Legal, Wilson practiced at Goodwin Procter LLP and Davis Wright Tremaine LLP. He advises companies and investors on complex corporate, financing, commercial, and strategic matters.
                 </p>
                 <button 
                   onClick={() => window.location.href = '/about#meet-the-founder'}
@@ -435,7 +495,7 @@ export default function MomentumLegalV2() {
                 <span className="font-medium">Momentum</span>
               </h2>
               <p className="text-lg font-light leading-relaxed max-w-lg text-gray-300">
-                Ready to drive your vision forward? Connect with us today.
+                Tell us about the transaction, growth decision, or commercial challenge in front of you. We typically respond within one business day.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -537,7 +597,7 @@ export default function MomentumLegalV2() {
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
-                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+                    {isSubmitting ? 'Sending...' : 'Request an Introductory Call'}
                   </motion.button>
                 </form>
               ) : (
@@ -638,7 +698,7 @@ export default function MomentumLegalV2() {
           </div>
           
           <div className="border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-gray-500 border-gray-800">
-            <p>© 2025 Momentum Legal. All rights reserved.</p>
+            <p>© 2026 Momentum Legal. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="/privacy" className="transition-colors hover:text-gray-300">Privacy Policy</a>
               <a href="/terms" className="transition-colors hover:text-gray-300">Terms of Service</a>
