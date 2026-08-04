@@ -287,59 +287,6 @@ export default function ServicesPage() {
                       </p>
                     </div>
 
-                    {/* Service Details */}
-                    <div className="space-y-3">
-                      <h3 className="text-base font-medium text-gray-900 mb-4">Key Services:</h3>
-                      <ul className="space-y-3">
-                        {service.services.slice(0, 3).map((item, i) => {
-                          // Check if item has a label (contains ': ')
-                          if (item.includes(': ')) {
-                            const [label, description] = item.split(': ')
-                            const subItems = description?.includes(' • ') ? description.split(' • ') : null
-                            return (
-                              <motion.li 
-                                key={i}
-                                className="flex items-start gap-3"
-                                whileHover={{ x: 4 }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
-                                <div className="text-sm font-light leading-relaxed text-gray-600">
-                                  <span className="font-normal text-gray-800">{label}:</span> {subItems ? (
-                                    <ul className="mt-2 space-y-1 ml-4">
-                                      {subItems.map((subItem, j) => (
-                                        <li key={j} className="flex items-start gap-2">
-                                          <span className="text-gray-400">•</span>
-                                          <span>{subItem}</span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  ) : (
-                                    <span> {description}</span>
-                                  )}
-                                </div>
-                              </motion.li>
-                            )
-                          } else {
-                            // Plain bullet point without label
-                            return (
-                              <motion.li 
-                                key={i}
-                                className="flex items-start gap-3"
-                                whileHover={{ x: 4 }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                <div className="w-1.5 h-1.5 rounded-full bg-black mt-2 flex-shrink-0"></div>
-                                <div className="text-sm font-light leading-relaxed text-gray-600">
-                                  <span className="font-normal text-gray-800">{item}</span>
-                                </div>
-                              </motion.li>
-                            )
-                          }
-                        })}
-                      </ul>
-                    </div>
-
                     <a
                       href={service.href}
                       className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-gray-600"
