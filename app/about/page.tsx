@@ -197,15 +197,28 @@ export default function AboutPage() {
                 </motion.div>
                 <h3 className="text-xl font-medium mb-2 text-gray-900">Wilson Hall</h3>
                 <p className="text-sm text-gray-600 mb-4">Founder & Principal Attorney</p>
-                <a 
-                  href="mailto:wilson@momentumlegalpc.com" 
-                  className="inline-flex flex-col items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-emerald-50 flex items-center justify-center transition-colors">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm font-medium">Email</span>
-                </a>
+                <div className="flex items-center justify-center gap-8">
+                  <a
+                    href="mailto:wilson@momentumlegalpc.com"
+                    className="inline-flex flex-col items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-emerald-50 flex items-center justify-center transition-colors">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm font-medium">Email</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/wilson-x-hall-41595bb9/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex flex-col items-center gap-2 text-gray-700 hover:text-emerald-600 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-emerald-50 flex items-center justify-center transition-colors">
+                      <Linkedin className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
+                </div>
               </div>
 
               {/* Core Values */}
