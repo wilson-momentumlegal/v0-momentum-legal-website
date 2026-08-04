@@ -123,10 +123,10 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-8 text-gray-900">
               Built for
               <br />
-              <span className="font-medium">decisive clients.</span>
+              <span className="font-medium">pivotal business decisions.</span>
             </h2>
             <p className="text-lg lg:text-xl font-light leading-relaxed text-gray-600 mb-12">
-              We advise companies, investors, and participants across the sports ecosystem when legal decisions carry meaningful commercial consequences. Our role is to clarify the risk, protect the client’s position, and help move the underlying objective forward—with advice that is rigorous, direct, and grounded in how business actually gets done.
+              We advise companies, investors, and participants across the technology, sports, and business ecosystems when legal decisions carry meaningful commercial consequences. Our role is to clarify the risk, protect the client’s position, and help move the underlying objective forward—with advice that is rigorous, direct, and grounded in how business actually gets done.
             </p>
           </motion.div>
         </div>
