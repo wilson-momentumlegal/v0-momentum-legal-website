@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate, NIL, and institutional counsel—delivered with clarity, speed, and precision.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -271,4 +271,3 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
-
