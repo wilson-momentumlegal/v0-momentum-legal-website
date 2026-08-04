@@ -88,7 +88,7 @@ export default function MomentumLegalV2() {
   }
 
   return (
-    <div className="min-h-full bg-gray-50 text-gray-900 font-inter">
+    <div className="min-h-full overflow-x-hidden bg-gray-50 text-gray-900 font-inter">
       <Navigation currentPage="home" />
 
       {/* Hero Section */}
