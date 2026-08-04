@@ -75,14 +75,12 @@ export function Navigation({ currentPage }: NavigationProps) {
               alt="Momentum Legal" 
               className="h-10 w-auto"
             />
-            <div className="flex flex-col leading-tight">
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-poppins font-semibold tracking-tight text-white uppercase">
-                  <span className="text-2xl">M</span>OMENTUM <span className="text-2xl">L</span>EGAL
-                </span>
-              </div>
-              <span className="text-[10px] font-poppins font-normal tracking-wide text-gray-300 uppercase">
-                a Professional Corporation
+            <div className="flex flex-col leading-none">
+              <span className="text-[17px] sm:text-lg font-poppins font-medium tracking-[0.08em] text-white uppercase">
+                Momentum Legal
+              </span>
+              <span className="mt-1 text-[8px] sm:text-[9px] font-poppins font-normal tracking-[0.14em] text-gray-400 uppercase">
+                A Professional Corporation
               </span>
             </div>
           </motion.div>
