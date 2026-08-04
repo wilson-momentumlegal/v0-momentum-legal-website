@@ -29,9 +29,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Momentum Legal – The Power Behind Your Next Deal",
+  title: "Momentum Legal | Corporate and Transaction Counsel",
   description:
-    "Business, NIL, and institutional counsel built for speed, precision, and clarity. We partner with founders, athletes, brands, collectives, and universities.",
+    "Corporate, commercial, and investor counsel for founders, growth companies, funds, and strategic investors, with dedicated sports, NIL, and institutional capabilities.",
   generator: "v0.app",
   icons: {
     icon: "/logo-latest.png",
