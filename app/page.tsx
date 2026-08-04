@@ -127,9 +127,15 @@ export default function MomentumLegalV2() {
                     variants={fadeUp}
                   >
                     Counsel for<br />
-                    <span className="font-medium">Companies &amp; Investors</span><br />
-                    <span className="text-gray-200">at consequential moments.</span>
+                    <span className="font-medium">Companies &amp; Investors</span>
                   </motion.h1>
+
+                  <motion.p
+                    className="max-w-xl text-2xl font-medium leading-tight text-white lg:text-3xl"
+                    variants={fadeUp}
+                  >
+                    When the stakes are high and momentum matters.
+                  </motion.p>
 
                   <motion.p 
                     className="text-lg lg:text-xl font-light leading-relaxed max-w-lg text-gray-200"
