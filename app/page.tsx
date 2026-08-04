@@ -175,14 +175,24 @@ export default function MomentumLegalV2() {
                   </motion.button>
                 </motion.div>
 
-                <motion.a
-                  href="/services#nil-athlete"
-                  className="inline-flex w-fit items-center gap-2 text-sm text-gray-200 hover:text-white transition-colors"
+                <motion.div
+                  className="max-w-xl border-l-2 border-white/70 bg-black/25 px-5 py-4 backdrop-blur-sm"
                   variants={fadeUp}
                 >
-                  Sports, NIL &amp; institutional counsel
-                  <ArrowRight className="h-4 w-4" />
-                </motion.a>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
+                    Also serving the sports ecosystem
+                  </p>
+                  <p className="mb-3 text-sm leading-relaxed text-gray-200">
+                    Counsel for athletes, collectives, brands, sponsors, and institutions.
+                  </p>
+                  <a
+                    href="/services#nil-athlete"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gray-200"
+                  >
+                    Explore Sports &amp; NIL Services
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </motion.div>
 
 
               </div>
