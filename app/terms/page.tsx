@@ -178,17 +178,17 @@ export default function TermsOfServicePage() {
                   alt="Momentum Legal" 
                   className="h-10 w-auto"
                 />
-                <div className="flex flex-col">
-                  <span className="text-xl font-poppins font-semibold tracking-tight uppercase">
-                    <span className="text-2xl">M</span>OMENTUM <span className="text-2xl">L</span>EGAL
+                <div className="flex flex-col leading-none">
+                  <span className="text-lg font-poppins font-medium tracking-[0.08em] uppercase">
+                    Momentum Legal
                   </span>
-                  <span className="text-[10px] font-poppins font-normal tracking-wide text-gray-300 uppercase">
-                    a Professional Corporation
+                  <span className="mt-1 text-[9px] font-poppins font-normal tracking-[0.14em] text-gray-400 uppercase">
+                    A Professional Corporation
                   </span>
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate, NIL, and institutional counsel—delivered with clarity, speed, and precision.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -241,4 +241,3 @@ export default function TermsOfServicePage() {
     </div>
   )
 }
-
