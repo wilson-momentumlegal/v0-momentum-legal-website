@@ -269,7 +269,7 @@ export default function MomentumLegalV2() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Primary practice</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Corporate &amp; commercial counsel</p>
               <h3 className="mb-3 text-3xl font-medium tracking-tight lg:text-4xl">Companies &amp; Investors</h3>
               <p className="mb-10 max-w-2xl text-base font-light leading-relaxed text-gray-600 lg:text-lg">
                 Strategic counsel for building, financing, operating, acquiring, and exiting businesses.
