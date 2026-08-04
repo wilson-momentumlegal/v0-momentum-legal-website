@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ServiceDetailPage } from "@/components/ServiceDetailPage"
 import { servicePageData } from "@/lib/service-page-data"
 
-const data = servicePageData["corporate-venture"]
+const data = servicePageData["commercial-technology"]
 
 export const metadata: Metadata = {
   title: data.seoTitle,

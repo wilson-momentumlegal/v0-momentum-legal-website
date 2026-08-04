@@ -59,6 +59,7 @@ export default function ServicesPage() {
       alt: "Corporate financial data and market analysis",
       icon: <Building className="h-8 w-8" />,
       id: "corporate-venture",
+      href: "/services/corporate-venture",
       services: [
         "Entity Formation and Structuring: LLCs, C‑Corps, partnerships, governance documents.",
         "Venture Financings & Investor Transactions: Represent VC funds, startups, and investors in debt and equity financings.",
@@ -74,6 +75,7 @@ export default function ServicesPage() {
       alt: "Technology and commercial transactions",
       icon: <Code className="h-8 w-8" />,
       id: "commercial-technology",
+      href: "/services/commercial-technology",
       services: [
         "Technology licensing & SaaS agreements",
         "Software development & integration agreements",
@@ -92,6 +94,7 @@ export default function ServicesPage() {
       alt: "Sports and Athletes",
       icon: <Trophy className="h-8 w-8" />,
       id: "nil-athlete",
+      href: "/services/nil-athlete",
       services: [
         "NIL Contract Drafting & Negotiation: Endorsements, sponsorships, appearances, social media deals.",
         "Brand & IP Protection: Trademark filings, publicity rights, licensing deals.",
@@ -107,6 +110,7 @@ export default function ServicesPage() {
       alt: "Valley Christian Warriors football field and athletic complex",
       icon: <Users className="h-8 w-8" />,
       id: "collective",
+      href: "/services/collective",
       services: [
         "Entity Structuring: For‑profit vs nonprofit, tax strategy, governance.",
         "Compliance Policies: NIL rule navigation, NCAA & CSC regulatory alignment.",
@@ -122,6 +126,7 @@ export default function ServicesPage() {
       alt: "Stack of branded sportswear t-shirts (Reebok, Adidas, Nike, Champion)",
       icon: <Briefcase className="h-8 w-8" />,
       id: "brand-sponsor",
+      href: "/services/brand-sponsor",
       services: [
         "Athlete Sponsorship Deals: Negotiation, drafting, compliance checks.",
         "Campaign Structuring: Social media, merchandise, appearances, joint ventures.",
@@ -136,6 +141,7 @@ export default function ServicesPage() {
       alt: "Historic university building with Gothic architecture",
       icon: <GraduationCap className="h-8 w-8" />,
       id: "university-institutional",
+      href: "/services/university-institutional",
       services: [
         "Policy Drafting: NIL handbooks, compliance guides, contract templates.",
         "Workshops & Training: For compliance officers, athletes, and coaches.",
@@ -285,7 +291,7 @@ export default function ServicesPage() {
                     <div className="space-y-3">
                       <h3 className="text-base font-medium text-gray-900 mb-4">Key Services:</h3>
                       <ul className="space-y-3">
-                        {service.services.map((item, i) => {
+                        {service.services.slice(0, 3).map((item, i) => {
                           // Check if item has a label (contains ': ')
                           if (item.includes(': ')) {
                             const [label, description] = item.split(': ')
@@ -333,6 +339,14 @@ export default function ServicesPage() {
                         })}
                       </ul>
                     </div>
+
+                    <a
+                      href={service.href}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-gray-600"
+                    >
+                      Explore {service.title}
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
                 
@@ -443,12 +457,12 @@ export default function ServicesPage() {
             <div>
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
-                <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
-                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services#university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
+                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
+                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
+                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
+                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
               </div>
             </div>
           </div>

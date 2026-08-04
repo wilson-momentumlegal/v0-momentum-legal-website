@@ -423,12 +423,12 @@ export default function AboutPage() {
             <div>
               <h4 className="text-sm font-medium mb-4 tracking-wide">SERVICES</h4>
               <div className="space-y-3 text-sm font-light text-gray-400">
-                <a href="/services#corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
-                <a href="/services#commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services#nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services#collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services#brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services#university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
+                <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
+                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
+                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
+                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
+                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
               </div>
             </div>
           </div>
