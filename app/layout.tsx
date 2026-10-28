@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.momentumlegalpc.com"),
   title: "Momentum Legal | Corporate and Transaction Counsel",
   description:
-    "Corporate, commercial, and investor counsel for founders, growth companies, funds, and strategic investors, with dedicated sports, NIL, and institutional capabilities.",
+    "Corporate, commercial, and investor counsel for founders, growth companies, funds, and strategic investors, with dedicated Sports Business and Investment capabilities.",
   generator: "v0.app",
   icons: {
     icon: "/logo-latest.png",

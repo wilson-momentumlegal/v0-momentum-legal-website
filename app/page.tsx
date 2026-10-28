@@ -314,21 +314,21 @@ export default function MomentumLegalV2() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Also serving the sports ecosystem</p>
-              <h3 className="mb-3 text-3xl font-medium tracking-tight">Sports &amp; NIL</h3>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Sports Industry Counsel</p>
+              <h3 className="mb-3 text-3xl font-medium tracking-tight">Sports Business &amp; Investment</h3>
               <p className="mb-8 text-base font-light leading-relaxed text-gray-300">
-                Counsel for athletes, collectives, brands, sponsors, and institutions.
+                Corporate and transactional counsel for companies, investors, and operators shaping the business of sport.
               </p>
               <div className="border-y border-white/20">
                 {[
-                  { title: "Athletes", anchor: "nil-athlete" },
-                  { title: "Collectives", anchor: "collective" },
-                  { title: "Brands & Sponsors", anchor: "brand-sponsor" },
-                  { title: "Universities & Institutions", anchor: "university-institutional" }
+                  { title: "Sports Technology & Wearables", href: "/services/sports-business-investment#sports-technology" },
+                  { title: "Sports Investment & Private Capital", href: "/services/sports-business-investment#sports-investment" },
+                  { title: "Emerging Leagues & Sports Ventures", href: "/services/sports-business-investment#emerging-leagues" },
+                  { title: "Sports Media, Data & Commercialization", href: "/services/sports-business-investment#sports-commercialization" }
                 ].map((service) => (
                   <a
-                    key={service.anchor}
-                    href={`/services/${service.anchor}`}
+                    key={service.title}
+                    href={service.href}
                     className="group flex items-center justify-between gap-6 border-b border-white/20 py-4 last:border-b-0"
                   >
                     <span className="text-lg font-medium">{service.title}</span>
@@ -336,8 +336,8 @@ export default function MomentumLegalV2() {
                   </a>
                 ))}
               </div>
-              <a href="/services/nil-athlete" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
-                Explore Sports &amp; NIL Services
+              <a href="/services/sports-business-investment" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                Explore Sports Business Services
                 <ArrowRight className="h-4 w-4" />
               </a>
             </motion.div>
@@ -671,7 +671,7 @@ export default function MomentumLegalV2() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports Business &amp; Investment capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -708,10 +708,7 @@ export default function MomentumLegalV2() {
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
                 <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/sports-business-investment" className="block transition-colors hover:text-white">Sports Business &amp; Investment</a>
               </div>
             </div>
           </div>

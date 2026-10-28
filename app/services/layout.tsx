@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
-const title = "Corporate, Commercial & Sports Legal Services | Momentum Legal"
+const title = "Corporate, Commercial & Sports Business Legal Services | Momentum Legal"
 const description =
-  "Explore corporate, venture, commercial, and technology transaction counsel for companies and investors, plus dedicated Sports and NIL legal services."
+  "Explore corporate, venture, commercial, and technology transaction counsel for companies and investors, plus dedicated Sports Business and Investment counsel."
 
 export const metadata: Metadata = {
   title,
