@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Menu, X, Linkedin, Instagram } from "lucide-react"
 
 interface NavigationProps {
-  currentPage: 'home' | 'about' | 'services' | 'contact' | 'privacy' | 'terms'
+  currentPage: 'home' | 'about' | 'services' | 'experience' | 'contact' | 'privacy' | 'terms'
 }
 
 export function Navigation({ currentPage }: NavigationProps) {
@@ -22,6 +22,10 @@ export function Navigation({ currentPage }: NavigationProps) {
     }
     if (sectionId === 'services' && currentPage !== 'services') {
       window.location.href = '/services'
+      return
+    }
+    if (sectionId === 'experience' && currentPage !== 'experience') {
+      window.location.href = '/experience'
       return
     }
     if (sectionId === 'contact' && currentPage !== 'contact') {
@@ -105,6 +109,12 @@ export function Navigation({ currentPage }: NavigationProps) {
             >
               Services
             </button>
+            <button
+              onClick={() => scrollToSection('experience')}
+              className={getNavItemClass('experience')}
+            >
+              Representative Matters
+            </button>
             <div className="h-5 w-px bg-gray-600"></div>
             <a href="https://www.linkedin.com/company/momentum-legal-p-c/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
@@ -161,6 +171,7 @@ export function Navigation({ currentPage }: NavigationProps) {
               <button onClick={() => scrollToSection('home')} className={getMobileNavItemClass('home')}>Home</button>
               <button onClick={() => scrollToSection('about')} className={getMobileNavItemClass('about')}>About</button>
               <button onClick={() => scrollToSection('services')} className={getMobileNavItemClass('services')}>Services</button>
+              <button onClick={() => scrollToSection('experience')} className={getMobileNavItemClass('experience')}>Representative Matters</button>
               <button onClick={() => window.location.href = '/contact'} className="w-full mt-4 px-6 py-2.5 text-sm font-medium bg-white text-black">
                 Schedule Consultation
               </button>
