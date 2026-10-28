@@ -93,14 +93,26 @@ export default function MomentumLegalV2() {
 
       {/* Hero Section */}
       <section id="home" className="pt-20 relative min-h-screen">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/High Rise Image.jpg')"
-          }}
+        {/* Bay Bridge video background with a static fallback for reduced motion and loading */}
+        <div
+          className="absolute inset-0 overflow-hidden bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/High Rise Image.jpg')" }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <video
+            className="absolute inset-0 h-full w-full object-cover object-center saturate-[0.78] contrast-[1.05] motion-reduce:hidden"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/High Rise Image.jpg"
+            aria-hidden="true"
+          >
+            <source src="/bay-bridge-hero.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/10"></div>
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         
         <div className="max-w-screen-2xl lg:p-12 mx-auto pt-6 px-6 pb-6 relative z-10">
