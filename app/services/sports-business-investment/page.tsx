@@ -148,12 +148,20 @@ export default function SportsBusinessInvestmentPage() {
               <h2 className="text-3xl font-light tracking-tight lg:text-5xl">Focused on the Evolving Sports Economy.</h2>
             </div>
 
-            <div className="border-y border-gray-300">
+            <div className="overflow-hidden border-y border-gray-300">
               {sectors.map((sector, index) => (
-                <article id={sector.id} key={sector.id} className="scroll-mt-28 border-b border-gray-300 py-12 last:border-b-0 lg:py-16">
-                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+                <article
+                  id={sector.id}
+                  key={sector.id}
+                  className={`relative scroll-mt-28 overflow-hidden border-b border-gray-300 px-6 py-12 last:border-b-0 lg:px-10 lg:py-16 ${index % 2 === 1 ? "bg-white/70" : "bg-transparent"}`}
+                >
+                  <div className="pointer-events-none absolute -right-16 -top-20 h-52 w-52 rounded-full border border-gray-300/60" />
+                  <div className="pointer-events-none absolute -right-5 -top-10 h-28 w-28 rounded-full border border-gray-300/50" />
+                  <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
                     <div className="lg:col-span-4">
-                      <p className="mb-5 text-xs font-semibold tracking-[0.2em] text-gray-400">{sector.number}</p>
+                      <div className="mb-6 flex h-11 w-11 items-center justify-center border border-gray-400/60 text-[11px] font-semibold tracking-[0.18em] text-gray-500">
+                        {sector.number}
+                      </div>
                       <h3 className="text-2xl font-medium tracking-tight lg:text-3xl">{sector.title}</h3>
                     </div>
                     <div className="lg:col-span-7 lg:col-start-6">
@@ -168,12 +176,10 @@ export default function SportsBusinessInvestmentPage() {
                       </ul>
                       {index === 0 && (
                         <div className="relative mt-9 aspect-[16/7] overflow-hidden bg-gray-200">
-                          <Image
-                            src="/Commercial & Technology Transactions Image.png"
+                          <img
+                            src="/Commercial%20%26%20Technology%20Transactions%20Image.png"
                             alt="Technology network representing sports data and connected platforms"
-                            fill
-                            className="object-cover grayscale-[20%]"
-                            sizes="(min-width: 1024px) 58vw, 100vw"
+                            className="absolute inset-0 h-full w-full object-cover grayscale-[20%]"
                           />
                         </div>
                       )}
