@@ -108,7 +108,7 @@ export default function MomentumLegalV2() {
             poster="/High Rise Image.jpg"
             aria-hidden="true"
           >
-            <source src="/bay-bridge-hero.mp4" type="video/mp4" />
+            <source src="/bay-bridge-hero-1080p.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/10"></div>
