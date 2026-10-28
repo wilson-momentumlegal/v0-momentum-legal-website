@@ -39,7 +39,7 @@ export default function ExperiencePage() {
           >
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-gray-400">Representative matters</p>
             <h1 className="max-w-5xl text-5xl font-light leading-[0.98] tracking-tight sm:text-6xl lg:text-8xl">
-              Experience calibrated for <span className="font-medium">consequential moments.</span>
+              Experience that brings <span className="font-medium">clarity and control</span> to complex transactions.
             </h1>
           </motion.div>
           <motion.p
