@@ -54,13 +54,18 @@ export default function ExperiencePage() {
       </section>
 
       <section className="border-b border-gray-200 bg-gray-50 px-6 py-14 lg:px-12">
-        <div className="mx-auto grid max-w-screen-2xl grid-cols-1 border-y border-gray-300 sm:grid-cols-3">
-          {stats.map((item, index) => (
-            <div key={item.label} className={`py-9 sm:px-8 ${index > 0 ? "border-t border-gray-300 sm:border-l sm:border-t-0" : ""}`}>
-              <p className="mb-2 text-4xl font-medium tracking-tight lg:text-5xl">{item.value}</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">{item.label}</p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-screen-2xl">
+          <div className="grid grid-cols-1 border-y border-gray-300 sm:grid-cols-3">
+            {stats.map((item, index) => (
+              <div key={item.label} className={`py-9 sm:px-8 ${index > 0 ? "border-t border-gray-300 sm:border-l sm:border-t-0" : ""}`}>
+                <p className="mb-2 text-4xl font-medium tracking-tight lg:text-5xl">{item.value}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">{item.label}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs leading-relaxed text-gray-500">
+            Includes matters completed by the firm&apos;s founder while practicing at other law firms.
+          </p>
         </div>
       </section>
 
@@ -121,7 +126,9 @@ export default function ExperiencePage() {
               </article>
             ))}
           </div>
-          <p className="mt-8 text-xs leading-relaxed text-gray-500">Selected prior representations. Some matters may have been completed at prior firms. Past results do not guarantee a similar outcome.</p>
+          <p className="mt-8 max-w-5xl text-xs leading-relaxed text-gray-500">
+            Representative prior experience of Momentum Legal&apos;s founder. Certain matters were completed while practicing at other law firms. Transaction values reflect publicly disclosed or otherwise permitted information. Past results do not guarantee a similar outcome.
+          </p>
         </div>
       </section>
 
