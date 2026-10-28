@@ -149,7 +149,7 @@ export default function SportsBusinessInvestmentPage() {
             </div>
 
             <div className="border-y border-gray-300">
-              {sectors.map((sector, index) => (
+              {sectors.map((sector) => (
                 <article id={sector.id} key={sector.id} className="scroll-mt-28 border-b border-gray-300 py-12 last:border-b-0 lg:py-16">
                   <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
                     <div className="lg:col-span-4">
@@ -166,15 +166,6 @@ export default function SportsBusinessInvestmentPage() {
                           </li>
                         ))}
                       </ul>
-                      {index === 0 && (
-                        <div className="relative mt-9 aspect-[16/7] overflow-hidden bg-gray-200">
-                          <img
-                            src="/Commercial%20%26%20Technology%20Transactions%20Image.png"
-                            alt="Technology network representing sports data and connected platforms"
-                            className="absolute inset-0 h-full w-full object-cover grayscale-[20%]"
-                          />
-                        </div>
-                      )}
                     </div>
                   </div>
                 </article>
