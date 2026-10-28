@@ -98,7 +98,7 @@ export default function ExperiencePage() {
                 <div><strong className="block text-3xl">$240M</strong><span className="text-xs text-gray-400">Aggregate value</span></div>
                 <div><strong className="block text-3xl">8</strong><span className="text-xs text-gray-400">Selected financings</span></div>
               </div>
-              <p className="mb-6 font-light leading-relaxed text-gray-300">Seed, Series A, Series B, Series C, Series D, and growth equity transactions.</p>
+              <p className="mb-6 font-light leading-relaxed text-gray-300">Pre-Seed through Series C, and growth equity transactions.</p>
               <p className="text-sm text-gray-400">Company counsel · Investor counsel · Diligence · NVCA documents · Closing coordination</p>
             </article>
           </div>
