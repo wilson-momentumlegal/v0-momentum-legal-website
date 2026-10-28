@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, Check } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Navigation } from "@/components/Navigation"
 
 export const metadata: Metadata = {
@@ -25,13 +25,6 @@ const sectors = [
     title: "Sports Technology & Wearables",
     description:
       "We advise companies developing and commercializing technologies that are transforming how sports are played, experienced, and analyzed. Our focus includes performance technology, wearable devices, biometrics, AI-powered analytics, connected fitness, software platforms, and sports data businesses.",
-    services: [
-      "Venture capital and growth financings",
-      "Technology licensing and commercialization",
-      "SaaS and commercial agreements",
-      "Strategic partnerships and joint ventures",
-      "Mergers and acquisitions",
-    ],
   },
   {
     id: "sports-investment",
@@ -39,13 +32,6 @@ const sectors = [
     title: "Sports Investment & Private Capital",
     description:
       "We advise investors, funds, strategic acquirers, and growth companies pursuing investment and acquisition opportunities across the sports economy. Our corporate and transactional experience supports clients navigating investments, ownership arrangements, strategic transactions, and portfolio company matters.",
-    services: [
-      "Private equity and venture investments",
-      "Minority and strategic investments",
-      "Mergers and acquisitions",
-      "Transaction structuring and due diligence",
-      "Corporate governance and investor rights",
-    ],
   },
   {
     id: "emerging-leagues",
@@ -53,13 +39,6 @@ const sectors = [
     title: "Emerging Leagues & Sports Ventures",
     description:
       "We advise founders, operators, investors, and emerging sports ventures developing new competitions, leagues, and business models. From entity formation and capitalization to commercial partnerships and governance, we help clients establish the legal and transactional foundations for growth.",
-    services: [
-      "Entity formation and corporate structuring",
-      "Equity financing and capitalization",
-      "Ownership and governance arrangements",
-      "Strategic partnerships and joint ventures",
-      "Commercial agreements and outside general counsel",
-    ],
   },
   {
     id: "sports-commercialization",
@@ -67,13 +46,6 @@ const sectors = [
     title: "Sports Media, Data & Commercialization",
     description:
       "We advise businesses commercializing sports-related media, data, technology, content, and intellectual property. Our work focuses on the commercial transactions and strategic relationships that enable companies to develop, distribute, license, and monetize sports-related products and services.",
-    services: [
-      "Sponsorship and strategic partnership agreements",
-      "Technology and data licensing",
-      "Media and content commercialization",
-      "Intellectual property licensing agreements",
-      "Commercial contracts and joint ventures",
-    ],
   },
 ]
 
@@ -158,14 +130,6 @@ export default function SportsBusinessInvestmentPage() {
                     </div>
                     <div className="lg:col-span-7 lg:col-start-6">
                       <p className="text-lg font-light leading-relaxed text-gray-600">{sector.description}</p>
-                      <ul className="mt-7 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
-                        {sector.services.map((service) => (
-                          <li key={service} className="flex items-start gap-3 text-sm leading-relaxed text-gray-700">
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-gray-500" />
-                            <span>{service}</span>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
                   </div>
                 </article>
