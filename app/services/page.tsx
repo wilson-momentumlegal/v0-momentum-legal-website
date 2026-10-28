@@ -88,66 +88,18 @@ export default function ServicesPage() {
       ]
     },
     {
-      title: "Name, Image, and Likeness (NIL) & Student-Athlete Representation",
-      description: "For student‑athletes, we are more than just legal counsel; we are your strategic legal muscle. We safeguard your eligibility while building your brand, providing practical NIL guidance, future-proof contract negotiation, and robust business structuring. Maximize today's opportunities and confidently prepare for a lasting career.",
-      image: "https://images.unsplash.com/photo-1475116730596-402cbd4ff6c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "Sports and Athletes",
+      title: "Sports Business & Investment",
+      description: "Corporate, investment, and commercial counsel for companies, investors, and operators shaping the business of sport—from sports technology and private capital to emerging leagues, media, data, and strategic commercialization.",
+      image: "/professional-sports-stadium-with-dramatic-lighting.jpg",
+      alt: "Professional sports stadium illuminated for an evening event",
       icon: <Trophy className="h-8 w-8" />,
-      id: "nil-athlete",
-      href: "/services/nil-athlete",
+      id: "sports-business-investment",
+      href: "/services/sports-business-investment",
       services: [
-        "NIL Contract Drafting & Negotiation: Endorsements, sponsorships, appearances, social media deals.",
-        "Brand & IP Protection: Trademark filings, publicity rights, licensing deals.",
-        "Business Formation for Student-Athletes: LLC or S‑corps for NIL income management.",
-        "Tax & Compliance Guidance: 1099 vs W‑2 considerations, NCAA/CSC compliance alignment.",
-        "Long‑Term Planning: Transitioning from college NIL to professional contracts, equity stakes, and royalties."
-      ]
-    },
-    {
-      title: "NIL Collective Representation",
-      description: "In a rapidly evolving regulatory landscape, NIL collectives demand proactive and precise legal strategy. We provide comprehensive support for governance, compliance, donor agreements, and athlete contracts, ensuring your programs remain credible, competitive, and sustainable.",
-      image: "/Football Field.jpg",
-      alt: "Valley Christian Warriors football field and athletic complex",
-      icon: <Users className="h-8 w-8" />,
-      id: "collective",
-      href: "/services/collective",
-      services: [
-        "Entity Structuring: For‑profit vs nonprofit, tax strategy, governance.",
-        "Compliance Policies: NIL rule navigation, NCAA & CSC regulatory alignment.",
-        "Contract Infrastructure: Templates for athlete deals, donor agreements, sponsorship partnerships.",
-        "Ongoing Legal Counsel: Monthly retainer services for compliance monitoring, contract drafting, and governance updates.",
-        "Audits & Risk Reviews: Annual compliance audits for donor reassurance and institutional credibility."
-      ]
-    },
-    {
-      title: "Brand & Sponsor Advisory",
-      description: "Brands partnering with athletes face distinct legal and regulatory complexities. We empower sponsors and agencies to structure impactful deals, protect their brands, and expertly navigate NIL and advertising regulations, ensuring effective and fully compliant campaigns.",
-      image: "/Brands Image.jpg",
-      alt: "Stack of branded sportswear t-shirts (Reebok, Adidas, Nike, Champion)",
-      icon: <Briefcase className="h-8 w-8" />,
-      id: "brand-sponsor",
-      href: "/services/brand-sponsor",
-      services: [
-        "Athlete Sponsorship Deals: Negotiation, drafting, compliance checks.",
-        "Campaign Structuring: Social media, merchandise, appearances, joint ventures.",
-        "IP & Licensing Agreements: Co‑branding, trademarks, content rights.",
-        "Regulatory Compliance: State law, NCAA rules, FTC advertising guidelines."
-      ]
-    },
-    {
-      title: "University & Institutional Counsel",
-      description: "Colleges and athletic departments are navigating the unprecedented shifts of the NIL era. We provide essential policy drafting, comprehensive compliance training, and rigorous contract oversight. Our expertise protects your institution, supports your student‑athletes, and preserves the integrity of your programs.",
-      image: "/University .jpg",
-      alt: "Historic university building with Gothic architecture",
-      icon: <GraduationCap className="h-8 w-8" />,
-      id: "university-institutional",
-      href: "/services/university-institutional",
-      services: [
-        "Policy Drafting: NIL handbooks, compliance guides, contract templates.",
-        "Workshops & Training: For compliance officers, athletes, and coaches.",
-        "Third‑Party Risk Management: Vetting contracts with collectives and sponsors.",
-        "Legal Audits: Assessing NIL ecosystem for compliance and reputational risk.",
-        "Strategic Advisory: Supporting schools in revenue‑sharing and post‑House v. NCAA transition."
+        "Sports Technology & Wearables",
+        "Sports Investment & Private Capital",
+        "Emerging Leagues & Sports Ventures",
+        "Sports Media, Data & Commercialization"
       ]
     }
   ]
@@ -191,7 +143,7 @@ export default function ServicesPage() {
                   variants={fadeUp}
                 >
                   <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  Corporate · Commercial · Sports &amp; NIL
+                  Corporate · Commercial · Sports Business
                 </motion.div>
 
                 <motion.h1 
@@ -207,7 +159,7 @@ export default function ServicesPage() {
                   className="text-lg lg:text-xl font-light leading-relaxed max-w-3xl text-gray-200"
                   variants={fadeUp}
                 >
-                  Practical, business-first advice for companies and investors, together with dedicated counsel for athletes, collectives, brands, sponsors, and institutions.
+                  Practical, business-first advice for companies, investors, and operators navigating transactions, growth, technology, and the evolving business of sport.
                 </motion.p>
               </div>
             </motion.div>
@@ -246,10 +198,10 @@ export default function ServicesPage() {
                 )}
                 {index === 2 && (
                   <div className="mb-12 mt-8 border-b border-gray-300 pb-8 pt-12">
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Also serving the sports ecosystem</p>
-                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">Sports &amp; NIL Counsel</h2>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Sports industry counsel</p>
+                    <h2 className="mb-4 text-3xl font-medium tracking-tight text-gray-900 lg:text-5xl">Sports Business &amp; Investment</h2>
                     <p className="max-w-3xl text-lg font-light leading-relaxed text-gray-600">
-                      Focused representation for athletes, collectives, brands, sponsors, universities, and other participants navigating commercial and regulatory change.
+                      Corporate and transactional counsel where sports, technology, and capital meet—including strategic investments, emerging ventures, and commercial partnerships.
                     </p>
                   </div>
                 )}
@@ -369,7 +321,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports Business &amp; Investment capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -406,10 +358,7 @@ export default function ServicesPage() {
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
                 <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/sports-business-investment" className="block transition-colors hover:text-white">Sports Business &amp; Investment</a>
               </div>
             </div>
           </div>

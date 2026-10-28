@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/experience',
     '/services',
+    '/services/sports-business-investment',
     '/services/nil-athlete',
     '/services/brand-sponsor',
     '/services/collective',

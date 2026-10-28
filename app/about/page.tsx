@@ -298,7 +298,7 @@ export default function AboutPage() {
                   items: [
                     { label: "Corporate & Venture Transactions", detail: "Companies, founders, funds, and investors" },
                     { label: "Commercial & Technology Transactions", detail: "Strategic and IP-driven business relationships" },
-                    { label: "Sports & NIL Counsel", detail: "Athletes, collectives, brands, sponsors, and institutions" }
+                    { label: "Sports Business & Investment", detail: "Sports technology, investors, emerging ventures, media, and commercialization" }
                   ]
                 }
               ].map((section, index) => (
@@ -388,7 +388,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports Business &amp; Investment capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -425,10 +425,7 @@ export default function AboutPage() {
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
                 <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/sports-business-investment" className="block transition-colors hover:text-white">Sports Business &amp; Investment</a>
               </div>
             </div>
           </div>

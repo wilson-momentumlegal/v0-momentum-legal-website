@@ -321,10 +321,10 @@ export default function MomentumLegalV2() {
               </p>
               <div className="border-y border-white/20">
                 {[
-                  { title: "Sports Technology & Wearables", href: "/services/nil-athlete" },
-                  { title: "Sports Investment & Private Capital", href: "/services/nil-athlete" },
-                  { title: "Emerging Leagues & Sports Ventures", href: "/services/nil-athlete" },
-                  { title: "Sports Media, Data & Commercialization", href: "/services/nil-athlete" }
+                  { title: "Sports Technology & Wearables", href: "/services/sports-business-investment#sports-technology" },
+                  { title: "Sports Investment & Private Capital", href: "/services/sports-business-investment#sports-investment" },
+                  { title: "Emerging Leagues & Sports Ventures", href: "/services/sports-business-investment#emerging-leagues" },
+                  { title: "Sports Media, Data & Commercialization", href: "/services/sports-business-investment#sports-commercialization" }
                 ].map((service) => (
                   <a
                     key={service.title}
@@ -336,7 +336,7 @@ export default function MomentumLegalV2() {
                   </a>
                 ))}
               </div>
-              <a href="/services/nil-athlete" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
+              <a href="/services/sports-business-investment" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white">
                 Explore Sports Business Services
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -671,7 +671,7 @@ export default function MomentumLegalV2() {
                 </div>
               </div>
               <p className="text-sm font-light leading-relaxed max-w-md mb-4 text-gray-400">
-                Corporate and commercial counsel for companies and investors, with dedicated Sports &amp; NIL capabilities.
+                Corporate and commercial counsel for companies and investors, with dedicated Sports Business &amp; Investment capabilities.
               </p>
               <div className="text-sm font-light text-gray-400 mb-6">
                 <p>28 Geary St., Suite 650 #193</p>
@@ -708,10 +708,7 @@ export default function MomentumLegalV2() {
               <div className="space-y-3 text-sm font-light text-gray-400">
                 <a href="/services/corporate-venture" className="block transition-colors hover:text-white">Corporate & Venture</a>
                 <a href="/services/commercial-technology" className="block transition-colors hover:text-white">Commercial & Technology</a>
-                <a href="/services/nil-athlete" className="block transition-colors hover:text-white">NIL & Athletes</a>
-                <a href="/services/collective" className="block transition-colors hover:text-white">NIL Collectives</a>
-                <a href="/services/brand-sponsor" className="block transition-colors hover:text-white">Brand & Sponsors</a>
-                <a href="/services/university-institutional" className="block transition-colors hover:text-white">University Counsel</a>
+                <a href="/services/sports-business-investment" className="block transition-colors hover:text-white">Sports Business &amp; Investment</a>
               </div>
             </div>
           </div>
