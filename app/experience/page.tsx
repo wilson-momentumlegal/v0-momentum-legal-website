@@ -37,7 +37,7 @@ export default function ExperiencePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
           >
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-gray-400">Representative experience</p>
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-gray-400">Representative matters</p>
             <h1 className="max-w-5xl text-5xl font-light leading-[0.98] tracking-tight sm:text-6xl lg:text-8xl">
               Experience calibrated for <span className="font-medium">consequential moments.</span>
             </h1>
