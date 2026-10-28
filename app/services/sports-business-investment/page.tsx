@@ -168,12 +168,10 @@ export default function SportsBusinessInvestmentPage() {
                       </ul>
                       {index === 0 && (
                         <div className="relative mt-9 aspect-[16/7] overflow-hidden bg-gray-200">
-                          <Image
-                            src="/Commercial & Technology Transactions Image.png"
+                          <img
+                            src="/Commercial%20%26%20Technology%20Transactions%20Image.png"
                             alt="Technology network representing sports data and connected platforms"
-                            fill
-                            className="object-cover grayscale-[20%]"
-                            sizes="(min-width: 1024px) 58vw, 100vw"
+                            className="absolute inset-0 h-full w-full object-cover grayscale-[20%]"
                           />
                         </div>
                       )}
