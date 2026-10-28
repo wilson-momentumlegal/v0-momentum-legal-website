@@ -391,6 +391,13 @@ export default function MomentumLegalV2() {
               <p className="mt-10 text-xs leading-relaxed text-gray-500">
                 Selected prior representations. Some matters may have been completed at prior firms. Past results do not guarantee a similar outcome.
               </p>
+              <a
+                href="/experience"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-emerald-700"
+              >
+                View Representative Experience
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </motion.div>
           </div>
         </div>
