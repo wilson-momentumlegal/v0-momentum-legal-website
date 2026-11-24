@@ -131,6 +131,7 @@ export async function POST(request: NextRequest) {
     if (!process.env.EMAILJS_SERVICE_ID) missingVars.push('EMAILJS_SERVICE_ID')
     if (!process.env.EMAILJS_TEMPLATE_ID) missingVars.push('EMAILJS_TEMPLATE_ID')
     if (!process.env.EMAILJS_USER_ID) missingVars.push('EMAILJS_USER_ID')
+    if (!process.env.EMAILJS_PRIVATE_KEY) missingVars.push('EMAILJS_PRIVATE_KEY')
 
     if (missingVars.length > 0) {
       return NextResponse.json(
@@ -161,6 +162,7 @@ export async function POST(request: NextRequest) {
       service_id: process.env.EMAILJS_SERVICE_ID,
       template_id: process.env.EMAILJS_TEMPLATE_ID,
       user_id: process.env.EMAILJS_USER_ID,
+      accessToken: process.env.EMAILJS_PRIVATE_KEY,
       template_params: {
         from_name: sanitized.fullName,
         from_email: sanitized.email,
